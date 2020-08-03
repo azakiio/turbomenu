@@ -1,19 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
 $primary: #e00000;
 $grey: #cecece;
 $black: #363636;
+$light-grey: #707070;
+$main-font: Cabin;
+$secondary-font: "Open Sans";
+$mobile-breakpoint: 767px;
 
 @mixin container {
-  max-width: 75rem + 2rem;
+  max-width: 64rem + 4rem;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 2rem;
 
   @include mobile {
+    padding: 0 1rem;
   }
 }
 
 h1 {
-  font-family: Cabin;
-  font-size: 32px;
+  font-family: $main-font;
+  font-size: 2rem;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
@@ -21,6 +27,7 @@ h1 {
   letter-spacing: normal;
   color: #000000;
 }
+
 @mixin MobileMobile-Header {
   font-family: Raleway;
   font-size: 32px;
@@ -28,7 +35,7 @@ h1 {
   color: #000000;
 }
 h2 {
-  font-family: Cabin;
+  font-family: $main-font;
   font-size: 24px;
   font-weight: bold;
   font-stretch: normal;
@@ -47,50 +54,54 @@ h3 {
   letter-spacing: normal;
   color: #000000;
 }
-@mixin ButtonRed {
-  font-family: OpenSans;
-  font-size: 18px;
-  font-weight: 600;
-  color: $primary;
-}
+
 @mixin ButtonPrimary {
-  font-family: OpenSans;
-  font-size: 18px;
+  border-radius: 0.25rem;
+  background-color: $primary;
+  font-family: "Open Sans";
+  font-size: 2rem;
   font-weight: 600;
   text-align: center;
-  color: #ffffff;
+  color: white;
+
+  @include mobile {
+    font-size: 1rem;
+  }
 }
+
 @mixin ButtonSecondary {
   font-family: OpenSans;
   font-size: 18px;
   text-align: center;
   color: $primary;
 }
+
 @mixin Menu-Link {
   font-family: OpenSans;
   font-size: 16px;
   font-weight: bold;
   color: $primary;
 }
-@mixin NavigationButtonHover {
-  font-family: OpenSans;
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
-  color: $primary;
-}
+
 @mixin BodySemibold {
   font-family: OpenSans;
   font-size: 16px;
   font-weight: 600;
   color: $black;
 }
-@mixin NavigationButtonInactive {
-  font-family: OpenSans;
+
+@mixin NavigationButton {
+  font-family: $secondary-font;
   font-size: 16px;
   text-align: center;
-  color: #707070;
+  color: $light-grey;
+
+  &:hover {
+    color: $primary;
+    font-weight: 600;
+  }
 }
+
 @mixin BodyRegular {
   font-family: OpenSans;
   font-size: 16px;
@@ -104,7 +115,7 @@ h3 {
 }
 
 @mixin mobile {
-  @media (max-width: 767px) {
+  @media (max-width: $mobile-breakpoint) {
     @content;
   }
 }

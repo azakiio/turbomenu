@@ -1,11 +1,31 @@
 .header {
     @include container;
-    margin-top: 2rem;
     
     &__nav {
+        height: 5rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
+
+    &__logo {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    &__action {
+        @include NavigationButton;
+        margin-left: 1.25rem;
+
+        &:first-child{
+            margin-left: 0;
+        }
+    }
+
+    &__qr-container {
+        display: flex;
+        align-items: flex-start;
+    }
+
 
 }
