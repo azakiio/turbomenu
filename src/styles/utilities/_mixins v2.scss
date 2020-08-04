@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+$primary: #e00000;
+$black: #363636;
+$grey: #707070;
+$light-grey: #CECECE;
+$main-font: "Cabin";
+$secondary-font: "Open Sans";
+$mobile-breakpoint: 767px;
+
+@mixin container {
+  max-width: 64rem + 4rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @include mobile {
+    padding: 0 1rem;
+  }
+}
+
+
+@mixin nav {
+  height: 5rem;
+  padding: 1rem 0;
+}
+
+
+@mixin navLink{
+  font-family: $secondary-font;
+  font-size: 1rem;
+  color: $grey;
+  text-align: center;
+
+  &:hover{
+    color: $primary;
+  }
+}
+
+@mixin restaurantTitle {
+  font-family: $primary-font;
+  font-size: 2rem;
+  color: $black;
+  font-weight: 600;
+}
+
+@mixin restaurantLink{
+  color: $primary;
+  font-size: 1rem;
+} 
+
+@mixin actionButton{
+  @include btn;
+
+  font-family: $primary-font;
+  font-size: 1rem;
+  font-weight: 600;
+  color: $black;
+
+  &:hover{
+    color: $primary;
+  }
+}
+
+@mixin menu {
+  background: #FFFFFF;
+  border-radius: 0.5rem;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+@mixin menuTitle{
+  font-family: $primary-font;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $black;
+  text-align: center;
+}
+
+@mixin btn{
+  border-radius: 0.25rem;
+  min-width: 9rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  font-family: $secondary-font;
+}
+
+@mixin primaryButton {
+  @include btn;
+
+  background: $primary;
+  color: white;
+}
+
+@mixin secondaryButton{
+  @include btn;
+
+  background: white;
+  color: $primary;
+}
+
+@mixin inputLabel{
+  font-family: $secondary-font;
+  font-weight: 600;
+  font-size: 1rem;
+  color: $black;
+}
+
+@mixin inputField {
+  background: white;
+  border: 1px solid $light-grey;
+  border-radius: 0.25rem;
+  padding: 0 1rem;
+  font-family: $secondary-font;
+}
+
+@mixin menuSectionHeader {
+  height: 5rem;
+  padding: 0 1rem;
+}
+
+@mixin menuSectionTitle {
+  font-family: $primary-font;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $black;
+  border-bottom: 1px solid $light-grey;
+}
+
+@mixin menuItem{
+  height: 5rem;
+  background-color: #fafafa;
+}
+
+@mixin menuItemTitle{
+  font-family: $primary-font;
+  font-size: 1rem;
+  color: $black;
+}
+
+@mixin menuItemDescription {
+  @include menuItemTitle;
+  font-style: italic;
+}
+
+// Same as description for now, might change later
+@mixin menuItemPrice {
+  @include menuItemTitle;
+  font-style: italic;
+}
