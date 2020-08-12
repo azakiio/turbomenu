@@ -12,10 +12,10 @@ function Header(props) {
           TurboMenu
         </a>
         <div className={block + "__right"}>
-          <a className={block + "__action"} href="/">
+          <a className={block + "__navLink"} href="/">
             Account
           </a>
-          <a className={block + "__action"} href="/">
+          <a className={block + "__navLink"} href="/">
             Logout
           </a>
         </div>
@@ -25,7 +25,7 @@ function Header(props) {
         <p className={block + "__link"}>{props.link}</p>
         <div className={block + "__qr-container"}>
           <QRCode value={props.link} />
-          <button className={block + "__action"}>
+          <button className={block + "__download"}>
             <FaDownload /> Download
           </button>
         </div>
