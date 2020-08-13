@@ -1,26 +1,60 @@
 .builder {
-    @include container;
-    @include menu;
+  @include container;
+  @include menu;
 
+  &__title {
+    @include menuTitle;
+  }
 
-    &__title {
-        @include menuTitle;
-    }
-
-
-    &__new {
-        @include primaryButton;
-    }
+  &__new {
+    @include primaryButton;
+  }
 }
 
-
-
-
-
 .section {
+  &__header {
+    @include menuSectionHeader;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 
-    &__header {
-        display: flex;
-        justify-content: space-between;
-    }
+  &__left {
+    display: flex;
+  }
+
+  &__title {
+    @include menuSectionTitle;
+    margin-bottom: 0.5rem;
+  }
+
+  &__description {
+    @include bodyText;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__buttons svg {
+    @include icons;
+    margin-right: 1rem;
+  }
+
+  &__right svg {
+    @include icons;
+    margin-left: 1rem;
+  }
+
+  &__new {
+    @include secondaryButton;
+  }
+  //here
+  @include inputForm;
+}
+
+.item {
+  @include inputForm;
 }

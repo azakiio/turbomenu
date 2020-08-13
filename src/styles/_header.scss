@@ -19,13 +19,24 @@
         margin-left: 1.5rem;
     }
 
+    &__title{
+        @include restaurantTitle;
+        margin-bottom: 0.5rem;
+    }
+
+    &__link {
+        @include restaurantLink;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
     &__qr-container {
         display: flex;
         align-items: flex-start;
     }
 
     &__download {
-        @include inputLabel;
+        @include actionButton;
     }
 
 

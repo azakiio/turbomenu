@@ -44,6 +44,7 @@ $mobile-breakpoint: 767px;
 @mixin restaurantLink {
   color: $primary;
   font-size: 1rem;
+  font-weight: 600;
 }
 
 @mixin actionButton {
@@ -53,6 +54,7 @@ $mobile-breakpoint: 767px;
   font-size: 1rem;
   font-weight: 600;
   color: $black;
+  background: none;
 
   &:hover {
     color: $primary;
@@ -79,18 +81,23 @@ $mobile-breakpoint: 767px;
   border: none;
   border-radius: 0.25rem;
   min-width: 9rem;
-  padding: 1rem 2rem;
   font-size: 1rem;
   font-weight: 600;
   text-align: center;
   font-family: $secondary-font;
+  transition: all .15s ease-in;
 }
 
 @mixin primaryButton {
   @include btn;
 
+  padding: 1rem 2rem;
   background: $primary;
   color: white;
+
+  &:hover{
+    background: #D10101;
+  }
 }
 
 @mixin secondaryButton {
@@ -105,19 +112,24 @@ $mobile-breakpoint: 767px;
   font-weight: 600;
   font-size: 1rem;
   color: $black;
+  display: block;
+  text-align: left;
 }
 
 @mixin inputField {
   background: white;
   border: 1px solid $light-grey;
   border-radius: 0.25rem;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   font-family: $secondary-font;
+  display: block;
+  height: 3rem;
 }
 
 @mixin menuSectionHeader {
   height: 5rem;
-  padding: 0 1rem;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid $light-grey;
 }
 
 @mixin menuSectionTitle {
@@ -125,7 +137,6 @@ $mobile-breakpoint: 767px;
   font-size: 1.25rem;
   font-weight: 700;
   color: $black;
-  border-bottom: 1px solid $light-grey;
 }
 
 @mixin menuItem {
@@ -144,8 +155,73 @@ $mobile-breakpoint: 767px;
   font-style: italic;
 }
 
+@mixin icons{
+  height: 1rem;
+  width: 1rem;
+  color: $light-grey;
+
+  &:hover{
+    color: $grey;
+    cursor: pointer;
+  }
+}
+
 // Same as description for now, might change later
 @mixin menuItemPrice {
   @include menuItemTitle;
   font-style: italic;
+}
+
+
+@mixin bodyText{
+  font: $secondary-font;
+  font-size: 1rem;
+}
+
+@mixin inputForm {
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+
+    & label {
+      @include inputLabel;
+    }
+
+    & input {
+      @include inputField;
+      margin-top: 0.5rem;
+      margin-bottom: 2rem;
+      width: 100%;
+    }
+
+    &-buttons {
+      display: flex;
+    }
+
+    &-add {
+      @include primaryButton;
+    }
+
+    &-cancel {
+      @include secondaryButton;
+      margin-left: 1rem;
+
+      &:hover {
+        background: #ffe2e2;
+      }
+    }
+
+    &__name {
+      width: 70%;
+      margin-right: 10%;
+    }
+
+    &__price {
+      width: 20%;
+    }
+
+    &__description {
+      width: 100%;
+    }
+  }
 }
