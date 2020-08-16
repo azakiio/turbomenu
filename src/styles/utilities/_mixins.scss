@@ -185,6 +185,7 @@ $mobile-breakpoint: 767px;
 
     & label {
       @include inputLabel;
+      display: block;
     }
 
     & input {
@@ -211,16 +212,16 @@ $mobile-breakpoint: 767px;
       }
     }
 
-    &__name {
-      width: 70%;
+    &-name {
+      width: 60%;
       margin-right: 10%;
     }
 
-    &__price {
+    &-price {
       width: 20%;
     }
 
-    &__description {
+    &-description {
       width: 100%;
     }
   }

@@ -152,17 +152,17 @@ function Section(props) {
         </div>
       ) : (
         <form onSubmit={props.handleSubmit} className={block + "__form"}>
-          <label>
+          <label className={block + "__form-name"}>
             Name <input name="name" type="text" required />
           </label>
-          <label>
-            Description (Optional): <input name="description" type="text" />
+          <label className={block + "__form-description"}>
+            Description (Optional)<input name="description" type="text" />
           </label>
           <div className={block + "__form-buttons"}>
-            <button type="submit" className={block + "__add"}>
+            <button type="submit" className={block + "__form-add"}>
               Add
             </button>
-            <button type="reset" onClick={props.handleCancel} className={block + "__cancel"}>
+            <button type="reset" onClick={props.handleCancel} className={block + "__form-cancel"}>
               Cancel
             </button>
           </div>
