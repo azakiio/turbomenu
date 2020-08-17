@@ -108,7 +108,7 @@ function Builder(props) {
   return (
     <main className={block}>
       <h2 className={block + "__title"}>Menu</h2>
-      {!menu.length && <p>Start building your menu by adding your first menu section.</p>}
+      {(!menu.length && !isSectionInput ) && <p>Start building your menu by adding your first menu section.</p>}
       <div className={block + "__menu"}>
         {menu.map((item, index) => (
           <Section

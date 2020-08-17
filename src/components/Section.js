@@ -7,8 +7,8 @@ function Section(props) {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isEditing, setEditing] = useState(props.firstTime);
 
-  function addItem() {
-    props.addItem();
+  function addItem(sectionIndex, e) {
+    props.addItem(sectionIndex, e);
     setItemInput(false);
   }
 
