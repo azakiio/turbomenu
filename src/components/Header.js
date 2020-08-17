@@ -1,6 +1,6 @@
 import React from "react";
 import QRCode from "qrcode.react";
-import { FaDownload, FaPrint } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa";
 import Logo from "./Logo.svg";
 
 function Header(props) {
@@ -10,7 +10,7 @@ function Header(props) {
     <header className={block}>
       <nav className={block + "__nav"}>
         <a href="/" className={block + "__logo"}>
-          <img src={Logo}></img>
+          <img src={Logo} alt="TurboMenu Logo"></img>
         </a>
         <div className={block + "__right"}>
           <a className={block + "__navLink"} href="/">

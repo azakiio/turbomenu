@@ -142,6 +142,7 @@ $mobile-breakpoint: 767px;
 @mixin menuItem {
   height: 5rem;
   background-color: #fafafa;
+  padding: 2rem
 }
 
 @mixin menuItemTitle {
@@ -206,6 +207,7 @@ $mobile-breakpoint: 767px;
     &-cancel {
       @include secondaryButton;
       margin-left: 1rem;
+      background: none;
 
       &:hover {
         background: #ffe2e2;
@@ -214,7 +216,7 @@ $mobile-breakpoint: 767px;
 
     &-name {
       width: 60%;
-      margin-right: 10%;
+      margin-right: 20%;
     }
 
     &-price {

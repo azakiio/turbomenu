@@ -40,6 +40,8 @@
 
   &__buttons svg {
     @include icons;
+    height: 1.25rem;
+    width: 1.25rem;
     margin-right: 1rem;
   }
 
@@ -51,10 +53,64 @@
   &__new {
     @include secondaryButton;
   }
+
+  &__submenu{
+    background: #FFF2F2;
+    text-align: left;
+    padding: 1rem 3rem;
+
+    & button{
+      background: none;
+    }
+  }
   
   @include inputForm;
 }
 
 .item {
+  @include menuItem;
+  display: flex;
+  justify-content: space-between;
+
+  &__left svg{
+    @include icons;
+  }
+
+  &__center{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+
+  &__name-price{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__right svg{
+    @include icons;
+    margin-left: 1rem;
+  }
+
   @include inputForm;
+  &__form{
+    background: #FAFAFA;
+    padding: 2rem;
+  }
+
+  &__name{
+    @include menuItemTitle;
+    display: block;
+  }
+
+  &__description{
+    @include menuItemDescription;
+    display: block;
+    align-self: flex-start;
+  }
+
+  &__price{
+    @include menuItemPrice;
+  }
+
 }
