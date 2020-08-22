@@ -127,7 +127,7 @@ $mobile-breakpoint: 767px;
 }
 
 @mixin menuSectionHeader {
-  height: 5rem;
+  min-height: 5rem;
   padding: 1rem 1rem;
   border-bottom: 1px solid $light-grey;
 }
@@ -167,16 +167,20 @@ $mobile-breakpoint: 767px;
   }
 }
 
-// Same as description for now, might change later
+@mixin iconButton{
+  background: none;
+  border: none;
+}
+
 @mixin menuItemPrice {
   @include menuItemTitle;
   font-style: italic;
 }
 
-
 @mixin bodyText{
   font: $secondary-font;
   font-size: 1rem;
+  text-align: left;
 }
 
 @mixin inputForm {
