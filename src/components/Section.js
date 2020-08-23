@@ -47,24 +47,24 @@ function Section(props) {
           </div>
         </form>
       ) : (
-        <div className={block + "__header"}>
-          <div className={block + "__left"}>
-            <button className={block + "__buttons"}>{/* <FaGripVertical /> */}</button>
-            <button className={block + "__buttons"}>
-              {isMenuOpen ? <FaChevronDown onClick={() => setMenuOpen(!isMenuOpen)} /> : <FaChevronRight onClick={() => setMenuOpen(!isMenuOpen)} />}
-            </button>
-            <div className={block + "__content"}>
+          <div className={block + "__header"}>
+            <div className={block + "__left"}>
+              <button className={block + "__button"}>
+                {isMenuOpen ? <FaChevronDown onClick={() => setMenuOpen(!isMenuOpen)} /> : <FaChevronRight onClick={() => setMenuOpen(!isMenuOpen)} />}
+              </button>
+            </div>
+
+            <div className={block + "__center"}>
               <div className={block + "__title"}>{props.name}</div>
               <div className={block + "__description"}>{props.description}</div>
             </div>
-          </div>
 
-          <div className={block + "__right"}>
-            <FaPen onClick={() => setEditing(true)} />
-            <FaTrash onClick={() => props.deleteSection(props.index)} />
+            <div className={block + "__right"}>
+              <button className={block + "__button"}><FaPen onClick={() => setEditing(true)} /></button>
+              <button className={block + "__button"}><FaTrash onClick={() => props.deleteSection(props.index)} /></button>
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
       {isMenuOpen && (
         <div>
@@ -87,12 +87,12 @@ function Section(props) {
           {isItemInput ? (
             <Item sectionIndex={props.index} addItem={addItem} cancelItem={cancelItem} firstTime={true} />
           ) : (
-            <div className={block + "__submenu"}>
-              <button className={block + "__new"} onClick={() => setItemInput(true)}>
-                + Add menu item
+              <div className={block + "__submenu"}>
+                <button className={block + "__new"} onClick={() => setItemInput(true)}>
+                  + Add menu item
               </button>
-            </div>
-          )}
+              </div>
+            )}
         </div>
       )}
     </section>

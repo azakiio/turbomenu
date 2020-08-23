@@ -8,6 +8,7 @@
 
   &__new {
     @include primaryButton;
+    margin-top: 2rem;
   }
 }
 
@@ -16,38 +17,46 @@
     @include menuSectionHeader;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
   }
 
   &__left {
     display: flex;
+    margin-right: 1rem;
   }
+
+  &__center{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+  }
+
+  &__right  {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2rem;
+    width: 4rem;
+  }
+
 
   &__title {
     @include menuSectionTitle;
-    margin-bottom: 0.5rem;
+    
   }
 
   &__description {
     @include bodyText;
   }
 
-  &__content {
+
+  &__button{
+    @include iconButton;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
 
-  &__buttons svg {
-    @include icons;
-    height: 1.25rem;
-    width: 1.25rem;
-    margin-right: 1rem;
-  }
-
-  &__right svg {
-    @include icons;
-    margin-left: 1rem;
+    & svg{
+      @include icons;
+    }
   }
 
   &__new {
@@ -57,10 +66,14 @@
   &__submenu{
     background: #FFF2F2;
     text-align: left;
-    padding: 1rem 3rem;
+    padding: 1rem 2rem;
 
     & button{
       background: none;
+
+      &:hover{
+        text-decoration: underline;
+      }
     }
   }
   
@@ -72,9 +85,6 @@
   display: flex;
   justify-content: space-between;
 
-  &__left svg{
-    @include icons;
-  }
 
   &__center{
     display: flex;
@@ -87,9 +97,20 @@
     justify-content: space-between;
   }
 
-  &__right svg{
-    @include icons;
-    margin-left: 1rem;
+  &__right {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2rem;
+    width: 4rem;
+  }
+
+  &__button{
+    @include iconButton;
+    display: flex;
+
+    & svg{
+      @include icons;
+    }
   }
 
   @include inputForm;

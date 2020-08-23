@@ -30,7 +30,7 @@ function Item(props) {
           </label>
           <label className={block + "__form-description"}>
             Description (Optional)
-            <input name="description" type="text" defaultValue={props.description}/>
+            <input name="description" type="text" defaultValue={props.description} />
           </label>
           <div className={block + "__form-buttons"}>
             <button type="submit" className={block + "__form-add"}>
@@ -42,25 +42,25 @@ function Item(props) {
           </div>
         </form>
       ) : (
-        <div className={block}>
-          <div className={block + "__left"}>
-            {/* <FaGripVertical /> */}
-          </div>
-
-          <div className={block + "__center"}>
-            <div className={block + "__name-price"}>
-              <div className={block + "__name"}>{props.name}</div>
-              <div className={block + "__price"}>{props.price}</div>
+          <div className={block}>
+            <div className={block + "__left"}>
+              {/* <FaGripVertical /> */}
             </div>
-            <div className={block + "__description"}>{props.description}</div>
-          </div>
 
-          <div className={block + "__right"}>
-            <FaPen onClick={() => setEditing(true)} />{" "}
-            <FaTrash onClick={() => props.deleteItem(props.sectionIndex, props.index)} />
+            <div className={block + "__center"}>
+              <div className={block + "__name-price"}>
+                <div className={block + "__name"}>{props.name}</div>
+                <div className={block + "__price"}>{props.price}</div>
+              </div>
+              <div className={block + "__description"}>{props.description}</div>
+            </div>
+
+            <div className={block + "__right"}>
+              <button className={block + "__button"}><FaPen onClick={() => setEditing(true)} />{" "}</button>
+              <button className={block + "__button"}><FaTrash onClick={() => props.deleteItem(props.sectionIndex, props.index)} /></button>
+            </div>
           </div>
-        </div>
-      )}
+        )}
     </div>
   );
 }
