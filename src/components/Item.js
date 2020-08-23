@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaGripVertical, FaPen, FaTrash } from "react-icons/fa";
+import { FaPen, FaTrash } from "react-icons/fa";
 
 function Item(props) {
   const block = "item";
@@ -36,31 +36,36 @@ function Item(props) {
             <button type="submit" className={block + "__form-add"}>
               Save
             </button>
-            <button type="reset" onClick={props.firstTime ? props.cancelItem : () => setEditing(false)} className={block + "__form-cancel"}>
+            <button
+              type="reset"
+              onClick={props.firstTime ? props.cancelItem : () => setEditing(false)}
+              className={block + "__form-cancel"}>
               Cancel
             </button>
           </div>
         </form>
       ) : (
-          <div className={block}>
-            <div className={block + "__left"}>
-              {/* <FaGripVertical /> */}
-            </div>
+        <div className={block}>
+          <div className={block + "__left"}>{/* <FaGripVertical /> */}</div>
 
-            <div className={block + "__center"}>
-              <div className={block + "__name-price"}>
-                <div className={block + "__name"}>{props.name}</div>
-                <div className={block + "__price"}>{props.price}</div>
-              </div>
-              <div className={block + "__description"}>{props.description}</div>
+          <div className={block + "__center"}>
+            <div className={block + "__name-price"}>
+              <div className={block + "__name"}>{props.name}</div>
+              <div className={block + "__price"}>{props.price}</div>
             </div>
-
-            <div className={block + "__right"}>
-              <button className={block + "__button"}><FaPen onClick={() => setEditing(true)} />{" "}</button>
-              <button className={block + "__button"}><FaTrash onClick={() => props.deleteItem(props.sectionIndex, props.index)} /></button>
-            </div>
+            <div className={block + "__description"}>{props.description}</div>
           </div>
-        )}
+
+          <div className={block + "__right"}>
+            <button className={block + "__button"} onClick={() => setEditing(true)}>
+              <FaPen />{" "}
+            </button>
+            <button className={block + "__button"} onClick={() => props.deleteItem(props.sectionIndex, props.index)}>
+              <FaTrash />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

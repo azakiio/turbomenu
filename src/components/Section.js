@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaChevronRight, FaChevronDown, FaGripVertical, FaPen, FaTrash } from "react-icons/fa";
+import { FaChevronRight, FaChevronDown, FaPen, FaTrash } from "react-icons/fa";
 import Item from "./Item";
 function Section(props) {
   const block = "section";
@@ -47,24 +47,28 @@ function Section(props) {
           </div>
         </form>
       ) : (
-          <div className={block + "__header"}>
-            <div className={block + "__left"}>
-              <button className={block + "__button"}>
-                {isMenuOpen ? <FaChevronDown onClick={() => setMenuOpen(!isMenuOpen)} /> : <FaChevronRight onClick={() => setMenuOpen(!isMenuOpen)} />}
-              </button>
-            </div>
-
-            <div className={block + "__center"}>
-              <div className={block + "__title"}>{props.name}</div>
-              <div className={block + "__description"}>{props.description}</div>
-            </div>
-
-            <div className={block + "__right"}>
-              <button className={block + "__button"}><FaPen onClick={() => setEditing(true)} /></button>
-              <button className={block + "__button"}><FaTrash onClick={() => props.deleteSection(props.index)} /></button>
-            </div>
+        <div className={block + "__header"}>
+          <div className={block + "__left"}>
+            <button className={block + "__button"} onClick={() => setMenuOpen(!isMenuOpen)}>
+              {isMenuOpen ? <FaChevronDown /> : <FaChevronRight />}
+            </button>
           </div>
-        )}
+
+          <div className={block + "__center"}>
+            <div className={block + "__title"}>{props.name}</div>
+            <div className={block + "__description"}>{props.description}</div>
+          </div>
+
+          <div className={block + "__right"}>
+            <button className={block + "__button"} onClick={() => setEditing(true)}>
+              <FaPen />
+            </button>
+            <button className={block + "__button"} onClick={() => props.deleteSection(props.index)}>
+              <FaTrash />
+            </button>
+          </div>
+        </div>
+      )}
 
       {isMenuOpen && (
         <div>
@@ -87,12 +91,12 @@ function Section(props) {
           {isItemInput ? (
             <Item sectionIndex={props.index} addItem={addItem} cancelItem={cancelItem} firstTime={true} />
           ) : (
-              <div className={block + "__submenu"}>
-                <button className={block + "__new"} onClick={() => setItemInput(true)}>
-                  + Add menu item
+            <div className={block + "__submenu"}>
+              <button className={block + "__new"} onClick={() => setItemInput(true)}>
+                + Add menu item
               </button>
-              </div>
-            )}
+            </div>
+          )}
         </div>
       )}
     </section>
