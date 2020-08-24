@@ -174,7 +174,6 @@ $mobile-breakpoint: 767px;
 
 @mixin menuItemPrice {
   @include menuItemTitle;
-  font-style: italic;
 }
 
 @mixin bodyText{
@@ -231,4 +230,15 @@ $mobile-breakpoint: 767px;
       width: 100%;
     }
   }
+}
+
+@mixin menuSectionButton{
+  font-family: $primary-font;
+  font-weight: 600;
+  font-size: 1rem;
+  background: none;
+  padding: 0 1rem;
+  border: 1px solid $blue;
+  border-radius: 1.5rem;
+  height: 2.75rem;
 }

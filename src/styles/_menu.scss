@@ -1,0 +1,86 @@
+$blue: #6287EA;
+
+.menu{
+
+    &__header{
+        background: #fff;
+        padding: 1rem 0;
+    }
+
+    &__name{
+        @include restaurantTitle;
+        margin: 0.5rem 1rem;
+    }
+
+    &__sections{
+        display: flex;
+        white-space: nowrap;  
+        overflow-y: hidden;
+        overflow-x: scroll;
+        padding: 0 1rem;
+
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__sectionButton{
+        list-style: none;
+        margin-right: 0.25rem;
+
+        & button{
+            @include menuSectionButton;
+            background: none;
+            padding: 0 1rem;
+            border: 1px solid $blue;
+            border-radius: 1.5rem;
+            height: 2.75rem;
+        }
+    }
+
+    &__content{
+        background: #FAFAFA;
+        padding: 1rem;
+    }
+
+    &__sectionName{
+        @include menuSectionTitle;
+        border-bottom: 2px solid $blue;
+        margin: 0rem 0 0.5rem 0;
+        padding-bottom: 0.25rem;
+    }
+
+    &__sectionDescription {
+        @include menuItemDescription;
+        margin-bottom: 1rem;
+    }
+
+    &__item{
+        margin-bottom: 1rem;
+    }
+
+    &__name-price{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        font-weight: 800;
+    }
+
+    &__itemName{
+        @include menuItemTitle;
+    }
+
+    &__itemPrice{
+        @include menuItemPrice;
+    }
+
+    &__itemDescription{
+        @include menuItemDescription;
+    }
+
+
+
+}

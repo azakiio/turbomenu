@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import update from "immutability-helper";
 import Section from "./Section";
+import firebase from "../imports/firebase";
 
 function Builder(props) {
   const block = "builder";
@@ -37,6 +38,12 @@ function Builder(props) {
 
   const [menu, setMenu] = useState(test_menu);
   const [isSectionInput, setSectionInput] = useState(false);
+
+  useEffect(() => {
+    const rootRef = firebase.database().ref();
+    rootRef.push(test_menu);
+
+  }, []);
 
   function addSection(event) {
     event.preventDefault();
@@ -108,7 +115,7 @@ function Builder(props) {
   return (
     <main className={block}>
       <h2 className={block + "__title"}>Menu</h2>
-      {(!menu.length && !isSectionInput ) && <p>Start building your menu by adding your first menu section.</p>}
+      {!menu.length && !isSectionInput && <p>Start building your menu by adding your first menu section.</p>}
       <div className={block + "__menu"}>
         {menu.map((item, index) => (
           <Section
