@@ -38,12 +38,15 @@ function Builder(props) {
 
   const [menu, setMenu] = useState(test_menu);
   const [isSectionInput, setSectionInput] = useState(false);
+  
+  //testing purposes
+  console.log(menu);
 
-  useEffect(() => {
-    const rootRef = firebase.database().ref();
-    rootRef.push(test_menu);
+  // useEffect(() => {
+  //   const rootRef = firebase.database().ref();
+  //   rootRef.push(test_menu);
 
-  }, []);
+  // }, []);
 
   function addSection(event) {
     event.preventDefault();
