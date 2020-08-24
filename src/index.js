@@ -4,6 +4,7 @@ import { useRoutes } from "hookrouter";
 import Header from "./components/Header";
 import Builder from "./components/Builder";
 import Menu from "./components/Menu";
+import Login from "./components/Login";
 import "./style.scss";
 
 
@@ -14,7 +15,9 @@ const routes = {
       <Builder></Builder>
     </>
   ),
+  "/login": () => <Login />,
   "/:name": (name) => <Menu name={name} />,
+  
 };
 
 function App() {
