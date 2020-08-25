@@ -23,6 +23,27 @@ $mobile-breakpoint: 767px;
   }
 }
 
+@mixin header1{
+  font-family: $primary-font;
+  color: $black;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+@mixin header2{
+  font-family: $primary-font;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $black;
+}
+
+@mixin header3{
+  font-family: $primary-font;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $black;
+}
+
 @mixin navLink {
   font-family: $secondary-font;
   font-size: 1rem;
@@ -228,6 +249,14 @@ $mobile-breakpoint: 767px;
 
     &-description {
       width: 100%;
+
+    &-email{
+      width: 100%;
+    }
+
+    &-password{
+      width: 100%;
+    }
     }
   }
 }
