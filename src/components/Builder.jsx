@@ -3,19 +3,21 @@ import update from "immutability-helper";
 import Section from "./Section";
 import firebase from "../imports/firebase";
 
+
 function Builder(props) {
   const block = "builder";
   const [menu, setMenu] = useState([]);
   const [isSectionInput, setSectionInput] = useState(false);
-  const menuRef = firebase.database().ref(`menus/${"demo"}/menu`);
 
   useEffect(() => {
+    const menuRef = firebase.database().ref(`menus/${props.id}/menu`);
     menuRef.once("value").then(function (snapshot) {
       setMenu(snapshot.val());
     });
-  }, [menuRef]);
-
+  }, [props.id]);
+  
   function save() {
+    const menuRef = firebase.database().ref(`menus/${props.id}/menu`);
     menuRef.set(menu);
   }
 
