@@ -5,48 +5,19 @@ import firebase from "../imports/firebase";
 
 function Builder(props) {
   const block = "builder";
-
-  //test form
-  var test_menu = [
-    {
-      name: "Appetizers",
-      description: "",
-      items: [
-        {
-          name: "Nachos",
-          price: "$10",
-          description: "Something something something ldjbfdjsbfs akjffsdfbds lorem",
-        },
-        {
-          name: "Mozzarella Sticks",
-          price: "$10",
-          description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur, repellat.",
-        },
-        {
-          name: "Mozzarella Sticks 3",
-          price: "$10",
-          description: "Lorem ipsum dolor sit amet consectetur.",
-        },
-      ],
-    },
-    {
-      name: "Drinks",
-      description: "",
-      items: [],
-    },
-  ];
-
-  const [menu, setMenu] = useState(test_menu);
+  const [menu, setMenu] = useState([]);
   const [isSectionInput, setSectionInput] = useState(false);
-  
-  //testing purposes
-  console.log(menu);
+  const menuRef = firebase.database().ref(`menus/${"demo"}/menu`);
 
-  // useEffect(() => {
-  //   const rootRef = firebase.database().ref();
-  //   rootRef.push(test_menu);
+  useEffect(() => {
+    menuRef.once("value").then(function (snapshot) {
+      setMenu(snapshot.val());
+    });
+  }, [menuRef]);
 
-  // }, []);
+  function save() {
+    menuRef.set(menu);
+  }
 
   function addSection(event) {
     event.preventDefault();
@@ -138,9 +109,14 @@ function Builder(props) {
       </div>
       {isSectionInput && <Section addSection={addSection} cancelSection={cancelSection} firstTime={true} />}
       {!isSectionInput && (
-        <button className={block + "__new"} onClick={() => setSectionInput(!isSectionInput)}>
-          + Add menu section
-        </button>
+        <>
+          <button className={block + "__new"} onClick={() => setSectionInput(!isSectionInput)}>
+            + Add menu section
+          </button>
+          <button className={`${block}__new`} onClick={() => save()}>
+            Save
+          </button>
+        </>
       )}
     </main>
   );
