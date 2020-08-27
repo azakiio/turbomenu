@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 import { useRoutes } from "hookrouter";
+import "./style.scss";
 import Header from "./components/Header";
 import Builder from "./components/Builder";
 import Menu from "./components/Menu";
 import Login from "./components/Login";
-import "./style.scss";
+
 
 const routes = {
   "/": () => (
