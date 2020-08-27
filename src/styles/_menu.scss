@@ -1,10 +1,30 @@
 $blue: #6287EA;
+$background: #FAFAFA;
 
 .menu{
+
+    &__loading{
+        @include header3;
+        background: white;
+        height: 100vh;
+        width: 100vw;
+        text-align: center;
+
+        &-logo{
+            margin-top: 50%;
+        }
+
+        &-message{
+            margin-top: 2rem;
+        }
+    }
 
     &__header{
         background: #fff;
         padding: 1rem 0;
+        position: sticky;
+        z-index: 1;
+        top: 0;
     }
 
     &__name{
@@ -38,11 +58,12 @@ $blue: #6287EA;
             border: 1px solid $blue;
             border-radius: 1.5rem;
             height: 2.75rem;
+            cursor: pointer;
         }
     }
 
     &__content{
-        background: #FAFAFA;
+        background: $background;
         padding: 1rem;
     }
 
@@ -59,13 +80,13 @@ $blue: #6287EA;
     }
 
     &__item{
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
     }
 
     &__name-price{
         display: flex;
         justify-content: space-between;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.25rem;
         font-weight: 800;
     }
 
@@ -79,8 +100,22 @@ $blue: #6287EA;
 
     &__itemDescription{
         @include menuItemDescription;
+        width: 90%;
     }
 
+
+    &__footer{
+        @include menuItemTitle;
+        background: $background;
+        text-align: center;
+        padding: 0.5rem;
+        font-weight: 600;
+
+        img{
+            margin-left: 0.5rem;
+            width: 6rem;
+        }
+    }
 
 
 }
