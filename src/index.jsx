@@ -15,7 +15,7 @@ const routes = {
     </>
   ),
   "/login": () => <Login />,
-  "/:name": ({name}) => <Menu id={name} />,
+  "/:id": ({id}) => <Menu id={id} />,
 };
 
 function App() {
