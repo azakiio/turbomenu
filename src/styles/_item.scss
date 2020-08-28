@@ -3,16 +3,21 @@
     display: flex;
     justify-content: space-between;
   
-  
     &__center{
       display: flex;
       flex-direction: column;
       width: 90%;
+      text-align: left;
     }
   
     &__name-price{
       display: flex;
       justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    &__description{
+      width: 90%;
     }
   
     &__right {

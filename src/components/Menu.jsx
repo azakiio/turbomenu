@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import firebase from "../imports/firebase";
+import Logo from "./Logo.svg";
+
 
 function Menu(props) {
   const block = "menu";
@@ -24,41 +26,52 @@ function Menu(props) {
   return (
     <>
       {loading ? (
-        <div>Loading...</div>
-      ) : (
-        <div>
-          <div className={block + "__header"}>
-            <div className={block + "__name"}>{title}</div>
-            <div className={block + "__sections"}>
-              {menu.map((item, index) => (
-                <li key={index} className={`${block}__sectionButton`}>
-                  <button>{item.name}</button>
-                </li>
-              ))}
-            </div>
+        <div className={block + "__loading"}>
+          <div className={block + "__loading-logo"}>
+            <img src={Logo} alt="TurboMenu Logo"></img>
           </div>
-          <div className={block + "__content"}>
-            <div className={block + "__section"}>
-              {menu.map((section, sectionIndex) => (
-                <>
-                  <div className={block + "__sectionName"}>{section.name}</div>
-                  <div className={block + "__sectionDescription"}>{section.description}</div>
-                  {section.items &&
-                    section.items.map((item, itemIndex) => (
-                      <div className={block + "__item"}>
-                        <div className={block + "__name-price"}>
-                          <div className={block + "__itemName"}>{item.name}</div>
-                          <div className={block + "__itemPrice"}>{item.price}</div>
-                        </div>
-                        <div className={block + "__itemDescription"}>{item.description}</div>
-                      </div>
-                    ))}
-                </>
-              ))}
-            </div>
+          <div className={block + "__loading-message"}>
+            Loading your delicious menu...
           </div>
         </div>
-      )}
+      ) : (
+          <div>
+            <div className={block + "__header"}>
+              <div className={block + "__name"}>{title}</div>
+              <div className={block + "__sections"}>
+                {menu.map((item, index) => (
+                  <li key={index} className={`${block}__sectionButton`}>
+                    <button>{item.name}</button>
+                  </li>
+                ))}
+              </div>
+            </div>
+            <div className={block + "__content"}>
+              <div className={block + "__section"}>
+                {menu.map((section, sectionIndex) => (
+                  <>
+                    <div className={block + "__sectionName"}>{section.name}</div>
+                    <div className={block + "__sectionDescription"}>{section.description}</div>
+                    {section.items &&
+                      section.items.map((item, itemIndex) => (
+                        <div className={block + "__item"}>
+                          <div className={block + "__name-price"}>
+                            <div className={block + "__itemName"}>{item.name}</div>
+                            <div className={block + "__itemPrice"}>{item.price}</div>
+                          </div>
+                          <div className={block + "__itemDescription"}>{item.description}</div>
+                        </div>
+                      ))}
+                  </>
+                ))}
+              </div>
+            </div>
+            <div className={block + "__footer"}>
+              Powered by
+            <img src={Logo} alt="TurboMenu Logo"></img>
+            </div>
+          </div>
+        )}
     </>
   );
 }

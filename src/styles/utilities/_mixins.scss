@@ -161,9 +161,10 @@ $mobile-breakpoint: 767px;
 }
 
 @mixin menuItem {
-  height: 5rem;
+  min-height: 3rem;
   background-color: #fafafa;
-  padding: 2rem
+  padding: 1rem;
+  border-bottom: 1px solid $light-grey;
 }
 
 @mixin menuItemTitle {
