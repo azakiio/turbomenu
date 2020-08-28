@@ -7,16 +7,15 @@ import Builder from "./components/Builder";
 import Menu from "./components/Menu";
 import Login from "./components/Login";
 
-
 const routes = {
-  "/": () => (
+  "/": () => <Login />,
+  "/builder": () => (
     <>
       <Header id="demo"></Header>
       <Builder id="demo"></Builder>
     </>
   ),
-  "/login": () => <Login />,
-  "/:id": ({id}) => <Menu id={id} />,
+  "/:id": ({ id }) => <Menu id={id} />,
 };
 
 function App() {
@@ -39,9 +38,4 @@ function App() {
   return routeResult || <h1>404 Not Found</h1>;
 }
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+ReactDOM.render(<App />, document.getElementById("root"));

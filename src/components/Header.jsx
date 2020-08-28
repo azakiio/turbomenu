@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import QRCode from "qrcode.react";
 import { FaDownload } from "react-icons/fa";
 import Logo from "./Logo.svg";
-import firebase from '../imports/firebase';
+import firebase from "../imports/firebase";
+import { navigate } from "hookrouter";
 
 function Header(props) {
   const block = "header";
-  const link = `https://turbo.menu/${props.id}`
+  const link = `https://turbo.menu/${props.id}`;
   const titleRef = firebase.database().ref(`menus/${"demo"}/title`);
   const [title, setTitle] = useState("Loading...");
 
@@ -17,8 +18,27 @@ function Header(props) {
   }, [titleRef]);
 
   function handleTitle(e) {
-    titleRef.set(e.currentTarget.innerText)
+    titleRef.set(e.currentTarget.innerText);
   }
+
+  function logout() {
+    firebase
+      .auth()
+      .signOut()
+      .then(function () {
+        navigate("/");
+      })
+      .catch(function (error) {
+        console.log(error.message);
+      });
+  }
+
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (!user) {
+      navigate("/");
+    }
+  });
+
   return (
     <header className={block}>
       <nav className={block + "__nav"}>
@@ -29,13 +49,15 @@ function Header(props) {
           <a className={block + "__navLink"} href="/">
             Account
           </a>
-          <a className={block + "__navLink"} href="/">
+          <button onClick={logout} className={block + "__navLink"} href="/">
             Logout
-          </a>
+          </button>
         </div>
       </nav>
       <div className={block + "__restaurant"}>
-        <h1 className={block + "__title"} contentEditable onBlur={handleTitle}>{title}</h1>
+        <h1 className={block + "__title"} contentEditable onBlur={handleTitle}>
+          {title}
+        </h1>
         <a className={block + "__link"} href={`/${props.id}`}>
           {link}
         </a>
