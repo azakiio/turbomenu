@@ -22,6 +22,11 @@ function Menu(props) {
     });
   }, [props.id]);
 
+  function scroll(id) {
+    const element = document.getElementById(id);
+    element.scrollTo({top: 0});
+  }
+
   return (
     <>
       {loading ? (
@@ -38,7 +43,7 @@ function Menu(props) {
             <ul className={block + "__sections"}>
               {menu.map((item, index) => (
                 <li key={index} className={`${block}__sectionButton`}>
-                  <button>{item.name}</button>
+                  <button onClick={(e) => scroll(index, e)}>{item.name}</button>
                 </li>
               ))}
             </ul>
@@ -46,7 +51,7 @@ function Menu(props) {
 
           <div className={block + "__content"}>
             {menu.map((section, sectionIndex) => (
-              <div className={block + "__section"}>
+              <div key={sectionIndex} id={sectionIndex} className={block + "__section"}>
                 <div className={block + "__sectionName"}>{section.name}</div>
                 <div className={block + "__sectionDescription"}>{section.description}</div>
                 {section.items &&

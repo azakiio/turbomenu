@@ -11,8 +11,8 @@ const routes = {
   "/": () => <Login />,
   "/builder": () => (
     <>
-      <Header id="demo"></Header>
-      <Builder id="demo"></Builder>
+      <Header id="rex"></Header>
+      <Builder id="rex"></Builder>
     </>
   ),
   "/:id": ({ id }) => <Menu id={id} />,

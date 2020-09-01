@@ -8,7 +8,7 @@ import { navigate } from "hookrouter";
 function Header(props) {
   const block = "header";
   const link = `https://turbo.menu/${props.id}`;
-  const titleRef = firebase.database().ref(`menus/${"demo"}/title`);
+  const titleRef = firebase.database().ref(`menus/${props.id}/title`);
   const [title, setTitle] = useState("Loading...");
 
   useEffect(() => {
