@@ -13,8 +13,8 @@ const routes = {
   "/login": () => <Login />,
   "/builder": () => (
     <>
-      <Header id="rex"></Header>
-      <Builder id="rex"></Builder>
+      <Header id="demo"></Header>
+      <Builder id="demo"></Builder>
     </>
   ),
   "/:id": ({ id }) => <Menu id={id} />,

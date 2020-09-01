@@ -206,7 +206,7 @@ $tablet-breakpoint: 1024px;
 }
 
 @mixin bodyText{
-  font: $secondary-font;
+  font-family: $secondary-font;
   font-size: 1rem;
   text-align: left;
 }

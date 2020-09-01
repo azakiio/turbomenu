@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="205px" viewBox="0 0 100 205" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <g id="Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="White-bg-Copy" transform="translate(-204.000000, -18.000000)" fill="#E00000" stroke="#E00000" stroke-width="4">
+            <g id="Group" transform="translate(206.000000, 20.000000)">
+                <g id="zap" transform="translate(0.140000, 0.000000)">
+                    <path d="M0,120 L47.5,120 L42.2222222,200 L95,80 L47.5,80 C51.0185185,26.6666667 52.7777778,0 52.7777778,0 L0,120 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

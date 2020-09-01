@@ -1,10 +1,12 @@
 import React from "react";
-import { navigate } from "hookrouter";
 import Logo from "./Logo.svg";
 import Hero from "../assets/hero.png";
-import firebase from "../imports/firebase";
+import {useTitle} from "hookrouter";
+import Fast from "../assets/fast.png";
+import Money from "../assets/money.svg";
 
 function Home() {
+  useTitle('TurboMenu — Contactless menus for your restaurant');
   const block = "home";
 
   return (
@@ -23,7 +25,7 @@ function Home() {
           <div className={`${block}__hero-content`}>
             <h1>Create a safe dining experience with a contactless menu</h1>
             <p>Easily create and manage a contactless menu to minimize contact between your customers and employees.</p>
-            <button>Get your free contactless menu</button>
+            <a href={`#${block}__how`} >Get your free contactless menu</a>
           </div>
 
           <img className={`${block}__hero-img`} src={Hero} alt="" />
@@ -44,7 +46,7 @@ function Home() {
               </div>
 
               <div className={`${block}__value-section-item`}>
-                <h1>⏳</h1>
+                <img src={Fast} alt=""/>
                 <div className={`${block}__value-section-content`}>
                   <h2>Faster for your customers and employees</h2>
                   <p>Your customers don’t have to wait for anyone to give them a menu, and your employees can focus on interacting with them and providing excellent service.</p>
@@ -52,7 +54,7 @@ function Home() {
               </div>
 
               <div className={`${block}__value-section-item`}>
-                <h1>💸</h1>
+                <img src={Money} alt=""/>
                 <div className={`${block}__value-section-content`}>
                   <h2>Cheaper and more practical</h2>
                   <p>Contactless menus can be instantly updated with new menu items or specials. Don't worry about having to print new menus or hiring someone to make them for you.</p>
@@ -63,7 +65,7 @@ function Home() {
 
 
 
-        <div className={`${block}__how`}>
+        <div id={`${block}__how`} className={`${block}__how`}>
           <h1>How it works</h1>
           <h2>Questions? Contact us at <a href="mailto:hello@turbo.menu">hello@turbo.menu</a></h2>
 
@@ -72,7 +74,7 @@ function Home() {
               <h1>1️⃣</h1>
               <h2>Send us your menu</h2>
               <p>
-                Send your menu to <a href="">hello@turbo.menu</a>. 
+                Send your menu to <a href="mailto:hello@turbo.menu">hello@turbo.menu</a>. 
                 We'll use it to create a digital, mobile-friendly version of your menu.
               </p>
             </div>
@@ -110,9 +112,9 @@ function Home() {
 
         <div className={`${block}__footer-contact`}>
           <p>
-            ✉️ <a href="mailto:hello@turbo.menu">hello@turbo.menu</a>
+             <a href="mailto:hello@turbo.menu">✉️ hello@turbo.menu</a>
             <br/>
-            📞 647-970-8575
+             <a href="tel:6479708575">📞 (647) 970-8575</a>
           </p>
         </div>
 

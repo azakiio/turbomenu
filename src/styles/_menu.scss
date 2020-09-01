@@ -67,6 +67,11 @@ $background: #FAFAFA;
         padding: 1rem;
     }
 
+    &__section {
+        padding-top: 9rem;
+        margin-top: -9rem;
+    }
+
     &__sectionName{
         @include menuSectionTitle;
         border-bottom: 2px solid $blue;
