@@ -6,9 +6,11 @@ import Header from "./components/Header";
 import Builder from "./components/Builder";
 import Menu from "./components/Menu";
 import Login from "./components/Login";
+import Home from "./components/Home";
 
 const routes = {
-  "/": () => <Login />,
+  "/": () => <Home />,
+  "/login": () => <Login />,
   "/builder": () => (
     <>
       <Header id="rex"></Header>

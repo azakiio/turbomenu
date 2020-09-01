@@ -6,9 +6,16 @@ $light-grey: #cecece;
 $primary-font: "Cabin";
 $secondary-font: "Open Sans";
 $mobile-breakpoint: 767px;
+$tablet-breakpoint: 1024px;
 
 @mixin mobile {
   @media (max-width: $mobile-breakpoint) {
+    @content;
+  }
+}
+
+@mixin tablet{
+  @media (min-width: $mobile-breakpoint) and (max-width: $tablet-breakpoint){
     @content;
   }
 }
