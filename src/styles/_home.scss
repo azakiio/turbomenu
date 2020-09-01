@@ -7,7 +7,7 @@ $red: #e50000;
     font-size: 2.5rem;
 
     @include mobile {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
     }
 
     @include tablet {
@@ -43,6 +43,7 @@ $red: #e50000;
 
     @include mobile {
       padding: 1rem 1rem;
+      text-align: center;
     }
 
     @include tablet {
@@ -73,6 +74,7 @@ $red: #e50000;
 
     @include mobile {
       flex-direction: column;
+      text-align: center;
     }
 
     &-img {
@@ -106,6 +108,12 @@ $red: #e50000;
       & p {
         font-size: 1.25rem;
         line-height: 1.75rem;
+        text-align: left;
+
+        @include mobile{
+          font-size: 1rem;
+          text-align: center;
+        }
       }
     }
 
@@ -154,6 +162,7 @@ $red: #e50000;
         & img {
           height: 5rem;
           width: 5rem;
+          margin-bottom: 2rem;
         }
 
         & h1 {
@@ -205,6 +214,11 @@ $red: #e50000;
       }
     }
 
+    & p {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
     &-section {
       display: flex;
       justify-content: space-between;
@@ -224,6 +238,17 @@ $red: #e50000;
         box-shadow: 0 0.1px 0.4px rgba(0, 0, 0, 0.017), 0 0.3px 1px rgba(0, 0, 0, 0.024),
           0 0.6px 1.9px rgba(0, 0, 0, 0.03), 0 1.1px 3.4px rgba(0, 0, 0, 0.036), 0 2.1px 6.3px rgba(0, 0, 0, 0.043),
           0 5px 15px rgba(0, 0, 0, 0.06);
+
+        & h1 span{
+          width: 2rem;
+          padding: 0 0.5rem;
+          border-bottom: 0.25rem solid $red;
+        }
+
+        & p {
+          text-align: left;
+          font-size: 1rem;
+        }
 
         @include mobile {
           width: 100%;
@@ -250,7 +275,13 @@ $red: #e50000;
 
     &-contact {
       font-weight: 600;
+
+      & a:hover{
+        color: $red;
+      }
     }
+
+
 
     @include mobile {
       padding: 1rem 2rem;

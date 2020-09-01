@@ -2,8 +2,9 @@ import React from "react";
 import Logo from "./Logo.svg";
 import Hero from "../assets/hero.png";
 import {useTitle} from "hookrouter";
-import Fast from "../assets/fast.png";
+import Fast from "../assets/fast.svg";
 import Money from "../assets/money.svg";
+import Safe from "../assets/safe.svg";
 
 function Home() {
   useTitle('TurboMenu — Contactless menus for your restaurant');
@@ -23,7 +24,7 @@ function Home() {
       <body>
         <div className={`${block}__hero`}>
           <div className={`${block}__hero-content`}>
-            <h1>Create a safe dining experience with a contactless menu</h1>
+            <h1>Create a safer dining experience with a contactless menu</h1>
             <p>Easily create and manage a contactless menu to minimize contact between your customers and employees.</p>
             <a href={`#${block}__how`} >Get your free contactless menu</a>
           </div>
@@ -36,7 +37,7 @@ function Home() {
 
           <div className={`${block}__value-section`}>
               <div className={`${block}__value-section-item`}>
-                <h1>😷</h1>
+                <img src={Safe} alt=""/>
                 <div className={`${block}__value-section-content`}>
                   <h2>Cleaner than paper menus</h2>
                   <p>Paper menus are one of the germiest things in restaurants. 
@@ -67,11 +68,11 @@ function Home() {
 
         <div id={`${block}__how`} className={`${block}__how`}>
           <h1>How it works</h1>
-          <h2>Questions? Contact us at <a href="mailto:hello@turbo.menu">hello@turbo.menu</a></h2>
+          <p>Questions? Contact us at <a href="mailto:hello@turbo.menu">hello@turbo.menu</a></p>
 
           <div className={`${block}__how-section`}>
             <div className={`${block}__how-section-item`}>
-              <h1>1️⃣</h1>
+              <h1><span>1</span></h1>
               <h2>Send us your menu</h2>
               <p>
                 Send your menu to <a href="mailto:hello@turbo.menu">hello@turbo.menu</a>. 
@@ -80,7 +81,7 @@ function Home() {
             </div>
 
             <div className={`${block}__how-section-item`}>
-              <h1>2️⃣</h1>
+              <h1><span>2</span></h1>
               <h2>Receive your link and QR code</h2>
               <p>
                 We'll get your menu up and running and create your very own TurboMenu link and QR code.
@@ -88,7 +89,7 @@ function Home() {
             </div>
 
             <div className={`${block}__how-section-item`}>
-              <h1>3️⃣</h1>
+              <h1><span>3</span></h1>
               <h2>Show it to customers!</h2>
               <p>
                 Place your menu link and QR code on tables (or anywhere else you want!) for your customers to use.
@@ -105,16 +106,16 @@ function Home() {
       <footer className={`${block}__footer`}>
         <div>
           <p>
-            Made in Toronto, Canada ❤️
+            Made in Toronto, Canada ♥
             <br/>
             © TurboMenu. All Rights Reserved.</p>
         </div>
 
         <div className={`${block}__footer-contact`}>
           <p>
-             <a href="mailto:hello@turbo.menu">✉️ hello@turbo.menu</a>
+             <a href="mailto:hello@turbo.menu">hello@turbo.menu</a>
             <br/>
-             <a href="tel:6479708575">📞 (647) 970-8575</a>
+             <a href="tel:6479708575">(647) 970-8575</a>
           </p>
         </div>
 
