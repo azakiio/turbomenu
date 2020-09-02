@@ -25,7 +25,7 @@ function Home() {
         <div className={`${block}__hero`}>
           <div className={`${block}__hero-content`}>
             <h1>Create a safer dining experience with a contactless menu</h1>
-            <p>Easily create and manage a contactless menu to minimize contact between your customers and employees.</p>
+            <p>Easily create and manage a contactless menu for your restaurant</p>
             <a href={`#${block}__how`} >Get your free contactless menu</a>
           </div>
 

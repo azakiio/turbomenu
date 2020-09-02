@@ -50,6 +50,10 @@ $red: #e50000;
       padding: 2rem;
     }
 
+    &-logo img{ 
+      height: 3rem;
+    }
+
     &-button {
       @include secondaryButton;
     }
@@ -57,7 +61,7 @@ $red: #e50000;
 
   // Body
   body {
-    padding: 3rem 5rem;
+    padding: 0rem 5rem;
 
     @include mobile {
       padding: 1rem;
@@ -70,6 +74,8 @@ $red: #e50000;
 
   &__hero {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 5rem;
 
     @include mobile {
@@ -103,27 +109,28 @@ $red: #e50000;
     &-content {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      width: 60%;
+      text-align: center;
+
+      @include mobile{
+        width: 100%;
+      }
+
+      @include tablet{
+        width: 100%;
+      }
 
       & p {
         font-size: 1.25rem;
         line-height: 1.75rem;
-        text-align: left;
-
-        @include mobile{
-          font-size: 1rem;
-          text-align: center;
-        }
+        text-align: center;
       }
     }
 
     a {
       @include primaryButton;
       margin-bottom: 2rem;
-
-      @include mobile {
-        align-self: center;
-      }
     }
   }
 
