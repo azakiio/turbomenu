@@ -1,4 +1,4 @@
-$blue: #6287EA;
+$red: #E00000;
 $background: #FAFAFA;
 
 .menu{
@@ -62,7 +62,7 @@ $background: #FAFAFA;
             @include menuSectionButton;
             display: block;
             padding: 0.5rem 1rem;
-            border: 2px solid $blue;
+            border: 2px solid $red;
             border-radius: 1.5rem;
             cursor: pointer;
         }
@@ -80,7 +80,7 @@ $background: #FAFAFA;
 
     &__sectionName{
         @include menuSectionTitle;
-        border-bottom: 2px solid $blue;
+        border-bottom: 2px solid $red;
         margin: 0rem 0 0.5rem 0;
         padding-bottom: 0.25rem;
     }

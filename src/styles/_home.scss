@@ -1,26 +1,18 @@
 $black: #363636;
 $red: #e50000;
+$desktop-padding: 5rem;
+$tablet-padding: 3rem;
+$mobile-padding: 1rem;
+
 
 .home {
+
   h1 {
     @include header1;
-    font-size: 2.5rem;
-
-    @include mobile {
-      font-size: 1.75rem;
-    }
-
-    @include tablet {
-      font-size: 2rem;
-    }
   }
 
   h2 {
     @include header2;
-
-    @include mobile {
-      font-size: 1.25rem;
-    }
   }
 
   h3 {
@@ -29,247 +21,268 @@ $red: #e50000;
 
   p {
     @include bodyText;
-    color: #3f3f3f;
+    color: $black; //#3f3f3f;
     line-height: 1.5rem;
   }
 
   // Header
 
   &__header {
-    padding: 1rem 5rem;
+    padding: 1rem $desktop-padding;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    @include mobile {
-      padding: 1rem 1rem;
-      text-align: center;
-    }
-
-    @include tablet {
-      padding: 2rem;
+    @include tablet{
+      padding: 1rem $tablet-padding;
     }
 
     &-logo img{ 
       height: 3rem;
     }
 
-    &-button {
+    &-login {
       @include secondaryButton;
+      color: $black;
+
+      &:hover{
+        color: $red;
+      }
+    }
+
+    &-signup{
+      @include primaryButton;
     }
   }
 
   // Body
-  body {
-    padding: 0rem 5rem;
-
-    @include mobile {
-      padding: 1rem;
-    }
-
-    @include tablet {
-      padding: 2rem;
-    }
-  }
-
+  
   &__hero {
+    padding: 2rem $desktop-padding;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin-bottom: 5rem;
 
     @include mobile {
+      padding: 0 $mobile-padding;
       flex-direction: column;
       text-align: center;
     }
 
-    &-img {
-      width: 50%;
+    @include tablet{
+      padding: 1rem $tablet-padding;
+    }
 
-      & img {
-        width: 100%;
-        height: auto;
+    & h1{
+      font-size: 3rem;
+
+      @include tablet{
+        font-size: 2rem;
       }
 
-      @include mobile {
-        width: 100%;
-        height: auto;
-      }
-
-      @include tablet {
-        width: 50%;
-
-        & img {
-          height: auto;
-          width: auto;
-        }
+      @include mobile{
+        font-size: 1.618rem;
       }
     }
 
     &-content {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      width: 60%;
-      text-align: center;
+      align-items: flex-start;
+      width: 50%;
 
       @include mobile{
         width: 100%;
+        align-items: center;
       }
 
       @include tablet{
-        width: 100%;
+        width: 50%;
       }
 
       & p {
         font-size: 1.25rem;
         line-height: 1.75rem;
-        text-align: center;
+
+        @include mobile{
+          text-align: center;
+          font-size: 1rem;
+          line-height: 1.75rem;
+        }
+
+        @include tablet{
+          font-size: 1rem;
+          line-height: 1.75rem;
+        }
+      }
+    }    
+
+    &-img {
+      width: 50%;
+
+      @include mobile {
+        width: 100%;
       }
     }
 
-    a {
+    & button {
       @include primaryButton;
       margin-bottom: 2rem;
     }
   }
 
-  &__value {
+  
+  &__3-col {
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 2rem $desktop-padding;
+    background: #FAFAFA;
+
+    @include tablet{
+      padding: 1rem $tablet-padding;
+    }
+
+    @include mobile{
+      padding: 1rem $mobile-padding;
+    }
 
     &-section {
       display: flex;
-      flex-direction: column;
       justify-content: space-around;
-      align-items: center;
+
+      @include mobile{
+        flex-direction: column;
+      }
+
+      
 
       &-item {
-        text-align: left;
-        background: white;
+        text-align: center;
         display: flex;
-        border-radius: 1rem;
-        padding: 1.5rem 2rem;
-        margin-bottom: 2rem;
+        flex-direction: column;
         align-items: center;
-        width: 60%;
+        width: 30%;
+        padding: 2rem;
 
-        @include mobile {
+        @include mobile{
           width: 100%;
-          flex-direction: column;
         }
 
-        @include tablet {
-          width: 100%;
-          flex-direction: row;
+        @include tablet{
+          padding: 1rem 0;
         }
 
         & img {
-          height: 5rem;
-          width: 5rem;
-          margin-bottom: 2rem;
+          height: 8rem;
+          width: 8rem;
+          margin-bottom: 1rem;
         }
-
-        & h1 {
-          font-size: 5rem;
-          margin: 0;
-          padding: 0;
-
-          @include mobile {
-            font-size: 3rem;
-          }
-        }
-
-        box-shadow: 0 0.1px 0.4px rgba(0, 0, 0, 0.017), 0 0.3px 1px rgba(0, 0, 0, 0.024),
-          0 0.6px 1.9px rgba(0, 0, 0, 0.03), 0 1.1px 3.4px rgba(0, 0, 0, 0.036), 0 2.1px 6.3px rgba(0, 0, 0, 0.043),
-          0 5px 15px rgba(0, 0, 0, 0.06);
       }
 
       &-content {
         display: flex;
         flex-direction: column;
-        text-align: left;
-        margin-left: 3rem;
 
         @include mobile {
           margin: 0;
         }
 
-        & h2 {
-          margin: 0;
+        & p{
+          margin-top: 0;
+          text-align: center;
         }
 
         & span {
-          color: $red;
           font-weight: 600;
         }
       }
     }
   }
 
-  &__how {
-    text-align: center;
+  &__2-col{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem $desktop-padding;
+    
+    @include tablet{
+      padding: 1rem $tablet-padding;
+    }
 
-    & a {
-      color: $red;
-      font-weight: 600;
+    @include mobile{
+      flex-direction: column;
+      padding: 1rem $mobile-padding;
+    }
 
-      &:hover {
-        text-decoration: underline;
+
+    &-content{
+      width: 45%;
+      padding: 2rem;
+
+      @include mobile{
+        width: 100%;
+      }
+     }
+
+    &-img{
+      width: 45%;
+
+      @include mobile{
+        width: 100%;
+      }
+
+      & img{
+        width: 100%;
       }
     }
 
-    & p {
-      text-align: center;
-      font-size: 1.25rem;
-    }
+  }
 
-    &-section {
-      display: flex;
-      justify-content: space-between;
-
-      @include mobile {
-        flex-direction: column;
-      }
-
-      &-item {
-        width: 32%;
-        background: #fafafa;
-        border-radius: 1rem;
-        text-align: center;
-        padding: 1rem 1.25rem;
-        margin-bottom: 2rem;
-
-        box-shadow: 0 0.1px 0.4px rgba(0, 0, 0, 0.017), 0 0.3px 1px rgba(0, 0, 0, 0.024),
-          0 0.6px 1.9px rgba(0, 0, 0, 0.03), 0 1.1px 3.4px rgba(0, 0, 0, 0.036), 0 2.1px 6.3px rgba(0, 0, 0, 0.043),
-          0 5px 15px rgba(0, 0, 0, 0.06);
-
-        & h1 span{
-          width: 2rem;
-          padding: 0 0.5rem;
-          border-bottom: 0.25rem solid $red;
-        }
-
-        & p {
-          text-align: left;
-          font-size: 1rem;
-        }
-
-        @include mobile {
-          width: 100%;
-        }
-      }
+  .reverse{
+    @include mobile{
+      flex-direction: column-reverse;
     }
   }
 
   &__contact {
+    padding: 2rem $desktop-padding;
+    background: #212121;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 50vh;
-    text-align: center;
+    align-items: center;
+
+    @include tablet{
+      padding: 2rem $tablet-padding;
+    }
+
+    @include mobile{
+      padding: 2rem $mobile-padding;
+    }
+
+    & h1{
+      text-align: center;
+      color: white;
+    }
+    
+    & p{
+      font-size: 1.5rem;
+      line-height: 1.75rem;
+      text-align: center;
+      color: white;
+    }
+
+    & a{
+      color: $red;
+      font-weight: 600;
+
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+
+    & button{
+      @include primaryButton;
+      margin: 1rem 0;
+    }
   }
 
   // Footer
@@ -277,7 +290,7 @@ $red: #e50000;
   &__footer {
     display: flex;
     justify-content: space-between;
-    padding: 1rem 5rem;
+    padding: 1rem $desktop-padding;
     background: #fafafa;
 
     &-contact {
@@ -287,7 +300,6 @@ $red: #e50000;
         color: $red;
       }
     }
-
 
 
     @include mobile {

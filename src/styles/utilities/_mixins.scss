@@ -35,6 +35,10 @@ $tablet-breakpoint: 1024px;
   color: $black;
   font-size: 2rem;
   font-weight: 600;
+
+  @include mobile{
+    font-size: 1.75rem;
+  }
 }
 
 @mixin header2{
@@ -107,7 +111,7 @@ $tablet-breakpoint: 1024px;
 @mixin btn {
   cursor: pointer;
   border: none;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   min-width: 9rem;
   font-size: 1rem;
   font-weight: 600;
@@ -275,7 +279,7 @@ $tablet-breakpoint: 1024px;
   font-size: 1rem;
   background: none;
   padding: 0 1rem;
-  border: 1px solid $blue;
+  border: 1px solid $red;
   border-radius: 1.5rem;
   // height: 2.75rem;
 }

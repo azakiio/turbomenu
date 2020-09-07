@@ -7,10 +7,13 @@ import Builder from "./components/Builder";
 import Menu from "./components/Menu";
 import Login from "./components/Login";
 import Home from "./components/Home";
+import Signup from "./components/Signup";
+
 
 const routes = {
   "/": () => <Home />,
   "/login": () => <Login />,
+  "/signup": () => <Signup />,
   "/builder": () => (
     <>
       <Header id="demo"></Header>
