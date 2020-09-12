@@ -16,6 +16,7 @@
         margin-bottom: 1rem;
     }
 
+
     &__form{
         padding: 2rem 4rem;
         display: flex;
@@ -39,8 +40,23 @@
     &__title{
         @include header2;
         text-align: center;
-        margin-bottom: 2rem;
     }
+
+    &__signup{
+        @include bodyText;
+        text-align: center;
+        margin-bottom: 2rem;
+
+        & a{
+            color: $red;
+            font-weight: 600;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
 
     &__form-buttons{
         justify-content: center;

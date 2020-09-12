@@ -32,7 +32,8 @@ function Login() {
         <div className={`${block}__logo`}>
           <img src={Logo} alt="TurboMenu Logo"></img>
         </div>
-        <div className={`${block}__title`}>Log in to your account</div>
+        <h2 className={`${block}__title`}>Log in to your account</h2>
+        <p className={`${block}__signup`}>Don't have an account yet? <a href="">Sign up</a></p>
 
         <label className={`${block}__form-100`}>
           Email
