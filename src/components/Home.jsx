@@ -23,8 +23,8 @@ function Home() {
         </div>
 
       <div>
-        <button className={`${block}__header-login`} onClick={() => navigate("/login")}>Log in</button>
-        <button className={`${block}__header-signup`} onClick={() => navigate("/signup")}>Sign up</button>
+        <button className={`${block}__header-login`}>Log in</button>
+        <button className={`${block}__header-signup`}>Sign up</button>
       </div>
 
       </header>
