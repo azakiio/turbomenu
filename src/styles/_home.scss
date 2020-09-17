@@ -4,8 +4,9 @@ $desktop-padding: 5rem;
 $tablet-padding: 3rem;
 $mobile-padding: 1rem;
 
-
 .home {
+  // max-width: 87.5rem - 2 * $desktop-padding;
+  // margin: auto;
 
   h1 {
     @include header1;
@@ -21,7 +22,7 @@ $mobile-padding: 1rem;
 
   p {
     @include bodyText;
-    color: $black; //#3f3f3f;
+    color: $black;
     line-height: 1.5rem;
   }
 
@@ -33,11 +34,11 @@ $mobile-padding: 1rem;
     justify-content: space-between;
     align-items: center;
 
-    @include tablet{
+    @include tablet {
       padding: 1rem $tablet-padding;
     }
 
-    &-logo img{ 
+    &-logo img {
       height: 3rem;
     }
 
@@ -45,18 +46,18 @@ $mobile-padding: 1rem;
       @include secondaryButton;
       color: $black;
 
-      &:hover{
+      &:hover {
         color: $red;
       }
     }
 
-    &-signup{
+    &-signup {
       @include primaryButton;
     }
   }
 
   // Body
-  
+
   &__hero {
     padding: 2rem $desktop-padding;
     display: flex;
@@ -68,18 +69,18 @@ $mobile-padding: 1rem;
       text-align: center;
     }
 
-    @include tablet{
+    @include tablet {
       padding: 1rem $tablet-padding;
     }
 
-    & h1{
+    & h1 {
       font-size: 3rem;
 
-      @include tablet{
+      @include tablet {
         font-size: 2rem;
       }
 
-      @include mobile{
+      @include mobile {
         font-size: 1.618rem;
       }
     }
@@ -90,12 +91,12 @@ $mobile-padding: 1rem;
       align-items: flex-start;
       width: 50%;
 
-      @include mobile{
+      @include mobile {
         width: 100%;
         align-items: center;
       }
 
-      @include tablet{
+      @include tablet {
         width: 50%;
       }
 
@@ -103,18 +104,18 @@ $mobile-padding: 1rem;
         font-size: 1.25rem;
         line-height: 1.75rem;
 
-        @include mobile{
+        @include mobile {
           text-align: center;
           font-size: 1rem;
           line-height: 1.75rem;
         }
 
-        @include tablet{
+        @include tablet {
           font-size: 1rem;
           line-height: 1.75rem;
         }
       }
-    }    
+    }
 
     &-img {
       width: 50%;
@@ -130,17 +131,16 @@ $mobile-padding: 1rem;
     }
   }
 
-  
   &__3-col {
     text-align: center;
     padding: 2rem $desktop-padding;
-    background: #FAFAFA;
+    background: #fafafa;
 
-    @include tablet{
+    @include tablet {
       padding: 1rem $tablet-padding;
     }
 
-    @include mobile{
+    @include mobile {
       padding: 1rem $mobile-padding;
     }
 
@@ -148,11 +148,9 @@ $mobile-padding: 1rem;
       display: flex;
       justify-content: space-around;
 
-      @include mobile{
+      @include mobile {
         flex-direction: column;
       }
-
-      
 
       &-item {
         text-align: center;
@@ -162,11 +160,11 @@ $mobile-padding: 1rem;
         width: 30%;
         padding: 2rem;
 
-        @include mobile{
+        @include mobile {
           width: 100%;
         }
 
-        @include tablet{
+        @include tablet {
           padding: 1rem 0;
         }
 
@@ -185,7 +183,7 @@ $mobile-padding: 1rem;
           margin: 0;
         }
 
-        & p{
+        & p {
           margin-top: 0;
           text-align: center;
         }
@@ -197,47 +195,45 @@ $mobile-padding: 1rem;
     }
   }
 
-  &__2-col{
+  &__2-col {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2rem $desktop-padding;
-    
-    @include tablet{
+
+    @include tablet {
       padding: 1rem $tablet-padding;
     }
 
-    @include mobile{
+    @include mobile {
       flex-direction: column;
       padding: 1rem $mobile-padding;
     }
 
-
-    &-content{
+    &-content {
       width: 45%;
       padding: 2rem;
 
-      @include mobile{
-        width: 100%;
-      }
-     }
-
-    &-img{
-      width: 45%;
-
-      @include mobile{
-        width: 100%;
-      }
-
-      & img{
+      @include mobile {
         width: 100%;
       }
     }
 
+    &-img {
+      width: 45%;
+
+      @include mobile {
+        width: 100%;
+      }
+
+      & img {
+        width: 100%;
+      }
+    }
   }
 
-  .reverse{
-    @include mobile{
+  .reverse {
+    @include mobile {
       flex-direction: column-reverse;
     }
   }
@@ -250,36 +246,36 @@ $mobile-padding: 1rem;
     justify-content: center;
     align-items: center;
 
-    @include tablet{
+    @include tablet {
       padding: 2rem $tablet-padding;
     }
 
-    @include mobile{
+    @include mobile {
       padding: 2rem $mobile-padding;
     }
 
-    & h1{
+    & h1 {
       text-align: center;
       color: white;
     }
-    
-    & p{
+
+    & p {
       font-size: 1.5rem;
       line-height: 1.75rem;
       text-align: center;
       color: white;
     }
 
-    & a{
+    & a {
       color: $red;
       font-weight: 600;
 
-      &:hover{
+      &:hover {
         text-decoration: underline;
       }
     }
 
-    & button{
+    & button {
       @include primaryButton;
       margin: 1rem 0;
     }
@@ -296,11 +292,10 @@ $mobile-padding: 1rem;
     &-contact {
       font-weight: 600;
 
-      & a:hover{
+      & a:hover {
         color: $red;
       }
     }
-
 
     @include mobile {
       padding: 1rem 2rem;
