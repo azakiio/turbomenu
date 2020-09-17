@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "./Logo.svg";
 import Hero from "../assets/hero.png";
-import {useTitle, navigate} from "hookrouter";
+import {useTitle} from "hookrouter";
 import Fast from "../assets/fast.svg";
 import Money from "../assets/money.svg";
 import Safe from "../assets/safe.svg";

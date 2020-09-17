@@ -1,7 +1,5 @@
 import React from "react";
-import { navigate } from "hookrouter";
 import Logo from "./Logo.svg";
-import firebase from "../imports/firebase";
 
 function Signup() {
   const block = "signup"; 
@@ -13,7 +11,7 @@ function Signup() {
           <img src={Logo} alt="TurboMenu Logo"></img>
         </div>
         <h2 className={`${block}__title`}>Create your account</h2>
-        <p className={`${block}__login`}>Already have an account? <a href="">Log in</a></p>
+        <p className={`${block}__login`}>Already have an account? <a href="/login">Log in</a></p>
 
         <label className={`${block}__form-100`}>
           Your Restaurant's Name
