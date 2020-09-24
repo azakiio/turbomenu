@@ -1,0 +1,60 @@
+.item {
+    @include menuItem;
+    display: flex;
+    justify-content: space-between;
+  
+    &__center{
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      text-align: left;
+    }
+  
+    &__name-price{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    &__description{
+      width: 90%;
+    }
+  
+    &__right {
+      display: flex;
+      justify-content: space-between;
+      margin-left: 2rem;
+      width: 4rem;
+    }
+  
+    &__button{
+      @include iconButton;
+      display: flex;
+  
+      & svg{
+        @include icons;
+      }
+    }
+  
+    @include inputForm;
+    &__form{
+      background: #FAFAFA;
+      padding: 2rem;
+    }
+  
+    &__name{
+      @include menuItemTitle;
+      display: block;
+    }
+  
+    &__description{
+      @include menuItemDescription;
+      display: block;
+      align-self: flex-start;
+    }
+  
+    &__price{
+      @include menuItemPrice;
+    }
+  
+  }

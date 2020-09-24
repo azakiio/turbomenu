@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+$primary: #e00000;
+$black: #363636;
+$grey: #707070;
+$light-grey: #cecece;
+$primary-font: "Cabin";
+$secondary-font: "Open Sans";
+$mobile-breakpoint: 767px;
+$tablet-breakpoint: 1024px;
+
+@mixin mobile {
+  @media (max-width: $mobile-breakpoint) {
+    @content;
+  }
+}
+
+@mixin tablet{
+  @media (min-width: $mobile-breakpoint) and (max-width: $tablet-breakpoint){
+    @content;
+  }
+}
+
+@mixin container {
+  max-width: 64rem + 4rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @include mobile {
+    padding: 0 1rem;
+  }
+}
+
+@mixin header1{
+  font-family: $primary-font;
+  color: $black;
+  font-size: 2rem;
+  font-weight: 600;
+
+  @include mobile{
+    font-size: 1.75rem;
+  }
+}
+
+@mixin header2{
+  font-family: $primary-font;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $black;
+}
+
+@mixin header3{
+  font-family: $primary-font;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $black;
+}
+
+@mixin navLink {
+  font-family: $secondary-font;
+  font-size: 1rem;
+  color: $grey;
+  text-align: center;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+@mixin restaurantTitle {
+  font-family: $primary-font;
+  font-size: 2rem;
+  color: $black;
+  font-weight: 600;
+}
+
+@mixin restaurantLink {
+  color: $primary;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+@mixin actionButton {
+  @include btn;
+
+  font-family: $primary-font;
+  font-size: 1rem;
+  font-weight: 600;
+  color: $black;
+  background: none;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+@mixin menu {
+  background: #ffffff;
+  border-radius: 0.5rem;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+@mixin menuTitle {
+  font-family: $primary-font;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $black;
+  text-align: center;
+}
+
+@mixin btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  min-width: 9rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  font-family: $secondary-font;
+  transition: all .15s ease-in;
+}
+
+@mixin primaryButton {
+  @include btn;
+
+  padding: 1rem 2rem;
+  background: $primary;
+  color: white;
+
+  &:hover{
+    background: #D10101;
+  }
+}
+
+@mixin secondaryButton {
+  @include btn;
+
+  background: white;
+  color: $primary;
+}
+
+@mixin inputLabel {
+  font-family: $secondary-font;
+  font-weight: 600;
+  font-size: 1rem;
+  color: $black;
+  display: block;
+  text-align: left;
+}
+
+@mixin inputField {
+  background: white;
+  border: 1px solid $light-grey;
+  border-radius: 0.25rem;
+  padding: 0 0.5rem;
+  font-family: $secondary-font;
+  display: block;
+  height: 3rem;
+}
+
+@mixin menuSectionHeader {
+  min-height: 5rem;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid $light-grey;
+}
+
+@mixin menuSectionTitle {
+  font-family: $primary-font;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $black;
+}
+
+@mixin menuItem {
+  min-height: 3rem;
+  background-color: #fafafa;
+  padding: 1rem;
+  border-bottom: 1px solid $light-grey;
+}
+
+@mixin menuItemTitle {
+  font-family: $primary-font;
+  font-size: 1rem;
+  color: $black;
+}
+
+@mixin menuItemDescription {
+  @include menuItemTitle;
+  font-style: italic;
+}
+
+@mixin icons{
+  height: 1rem;
+  width: 1rem;
+  color: $light-grey;
+
+  &:hover{
+    color: $grey;
+    cursor: pointer;
+  }
+}
+
+@mixin iconButton{
+  background: none;
+  border: none;
+}
+
+@mixin menuItemPrice {
+  @include menuItemTitle;
+}
+
+@mixin bodyText{
+  font-family: $secondary-font;
+  font-size: 1rem;
+  text-align: left;
+}
+
+@mixin inputForm {
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+
+    & label {
+      @include inputLabel;
+      display: block;
+    }
+
+    & input {
+      @include inputField;
+      margin-top: 0.5rem;
+      margin-bottom: 2rem;
+      width: 100%;
+    }
+
+    &-buttons {
+      display: flex;
+    }
+
+    &-add {
+      @include primaryButton;
+    }
+
+    &-cancel {
+      @include secondaryButton;
+      margin-left: 1rem;
+      background: none;
+
+      &:hover {
+        background: #ffe2e2;
+      }
+    }
+
+    &-name {
+      width: 60%;
+      margin-right: 20%;
+    }
+
+    &-price {
+      width: 20%;
+    }
+
+    &-description {
+      width: 100%;
+
+    &-email{
+      width: 100%;
+    }
+
+    &-password{
+      width: 100%;
+    }
+    }
+  }
+}
+
+@mixin menuSectionButton{
+  font-family: $primary-font;
+  font-weight: 600;
+  font-size: 1rem;
+  background: none;
+  padding: 0 1rem;
+  border: 1px solid $red;
+  border-radius: 1.5rem;
+  // height: 2.75rem;
+}

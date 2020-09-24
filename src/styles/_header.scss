@@ -1,0 +1,44 @@
+.header {
+    @include container;
+    
+    &__nav {
+        height: 5rem;
+        padding: 1rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    &__navLink {
+        @include navLink;
+        margin-left: 1.5rem;
+    }
+
+    &__title{
+        @include restaurantTitle;
+        margin-bottom: 0.5rem;
+        width: fit-content;
+    }
+
+    &__link {
+        @include restaurantLink;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    &__qr-container {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__download {
+        @include actionButton;
+    }
+
+
+}

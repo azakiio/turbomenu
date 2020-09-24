@@ -1,0 +1,13 @@
+.builder {
+  @include container;
+  @include menu;
+
+  &__title {
+    @include menuTitle;
+  }
+
+  &__new {
+    @include primaryButton;
+    margin-top: 2rem;
+  }
+}

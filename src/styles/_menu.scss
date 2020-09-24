@@ -1,0 +1,132 @@
+$red: #E00000;
+$background: #FAFAFA;
+
+.menu{
+
+    &__loading{
+        @include header3;
+        background: white;
+        height: 100vh;
+        width: 100vw;
+        text-align: center;
+
+        &-logo{
+            margin-top: 50%;
+        }
+
+        &-message{
+            margin-top: 2rem;
+        }
+    }
+
+    &__header{
+        background: #fff;
+        padding: 1rem 0;
+        position: sticky;
+        z-index: 1;
+        top: 0;
+        box-shadow: 0 0.1px 0.4px rgba(0, 0, 0, 0.017), 0 0.3px 1px rgba(0, 0, 0, 0.024),
+          0 0.6px 1.9px rgba(0, 0, 0, 0.03), 0 1.1px 3.4px rgba(0, 0, 0, 0.036), 0 2.1px 6.3px rgba(0, 0, 0, 0.043),
+          0 5px 15px rgba(0, 0, 0, 0.06);
+    }
+
+    &__name{
+        @include restaurantTitle;
+        margin: 0.5rem 1rem;
+    }
+
+    &__sections{
+        display: flex;
+        white-space: nowrap;  
+        overflow-y: hidden;
+        overflow-x: scroll;
+        padding: 0 1rem;
+
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__sectionButton{
+        list-style: none;
+        margin-right: 0.25rem;
+
+        & li {
+            height: 5rem;
+        }
+
+        & a{
+            @include menuSectionButton;
+            display: block;
+            padding: 0.5rem 1rem;
+            border: 2px solid $red;
+            border-radius: 1.5rem;
+            cursor: pointer;
+        }
+    }
+
+    &__content{
+        background: $background;
+        padding: 1rem;
+    }
+
+    &__section {
+        padding-top: 9rem;
+        margin-top: -9rem;
+    }
+
+    &__sectionName{
+        @include menuSectionTitle;
+        border-bottom: 2px solid $red;
+        margin: 0rem 0 0.5rem 0;
+        padding-bottom: 0.25rem;
+    }
+
+    &__sectionDescription {
+        @include menuItemDescription;
+        margin-bottom: 1rem;
+    }
+
+    &__item{
+        margin-bottom: 1.5rem;
+    }
+
+    &__name-price{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.25rem;
+        font-weight: 800;
+    }
+
+    &__itemName{
+        @include menuItemTitle;
+    }
+
+    &__itemPrice{
+        @include menuItemPrice;
+    }
+
+    &__itemDescription{
+        @include menuItemDescription;
+        width: 90%;
+    }
+
+
+    &__footer{
+        @include menuItemTitle;
+        background: $background;
+        text-align: center;
+        padding: 0.5rem;
+        font-weight: 600;
+
+        img{
+            margin-left: 0.5rem;
+            width: 6rem;
+        }
+    }
+
+
+}

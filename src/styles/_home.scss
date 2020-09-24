@@ -1,0 +1,309 @@
+$black: #363636;
+$red: #e50000;
+$desktop-padding: 5rem;
+$tablet-padding: 3rem;
+$mobile-padding: 1rem;
+
+.home {
+  // max-width: 87.5rem - 2 * $desktop-padding;
+  // margin: auto;
+
+  h1 {
+    @include header1;
+  }
+
+  h2 {
+    @include header2;
+  }
+
+  h3 {
+    @include header3;
+  }
+
+  p {
+    @include bodyText;
+    color: $black;
+    line-height: 1.5rem;
+  }
+
+  // Header
+
+  &__header {
+    padding: 1rem $desktop-padding;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include tablet {
+      padding: 1rem $tablet-padding;
+    }
+
+    &-logo img {
+      height: 3rem;
+    }
+
+    &-login {
+      @include secondaryButton;
+      color: $black;
+
+      &:hover {
+        color: $red;
+      }
+    }
+
+    &-signup {
+      @include primaryButton;
+    }
+  }
+
+  // Body
+
+  &__hero {
+    padding: 2rem $desktop-padding;
+    display: flex;
+    align-items: center;
+
+    @include mobile {
+      padding: 0 $mobile-padding;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    @include tablet {
+      padding: 1rem $tablet-padding;
+    }
+
+    & h1 {
+      font-size: 3rem;
+
+      @include tablet {
+        font-size: 2rem;
+      }
+
+      @include mobile {
+        font-size: 1.618rem;
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 50%;
+
+      @include mobile {
+        width: 100%;
+        align-items: center;
+      }
+
+      @include tablet {
+        width: 50%;
+      }
+
+      & p {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+
+        @include mobile {
+          text-align: center;
+          font-size: 1rem;
+          line-height: 1.75rem;
+        }
+
+        @include tablet {
+          font-size: 1rem;
+          line-height: 1.75rem;
+        }
+      }
+    }
+
+    &-img {
+      width: 50%;
+
+      @include mobile {
+        width: 100%;
+      }
+    }
+
+    & button {
+      @include primaryButton;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__3-col {
+    text-align: center;
+    padding: 2rem $desktop-padding;
+    background: #fafafa;
+
+    @include tablet {
+      padding: 1rem $tablet-padding;
+    }
+
+    @include mobile {
+      padding: 1rem $mobile-padding;
+    }
+
+    &-section {
+      display: flex;
+      justify-content: space-around;
+
+      @include mobile {
+        flex-direction: column;
+      }
+
+      &-item {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+        padding: 2rem;
+
+        @include mobile {
+          width: 100%;
+        }
+
+        @include tablet {
+          padding: 1rem 0;
+        }
+
+        & img {
+          height: 8rem;
+          width: 8rem;
+          margin-bottom: 1rem;
+        }
+      }
+
+      &-content {
+        display: flex;
+        flex-direction: column;
+
+        @include mobile {
+          margin: 0;
+        }
+
+        & p {
+          margin-top: 0;
+          text-align: center;
+        }
+
+        & span {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  &__2-col {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem $desktop-padding;
+
+    @include tablet {
+      padding: 1rem $tablet-padding;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      padding: 1rem $mobile-padding;
+    }
+
+    &-content {
+      width: 45%;
+      padding: 2rem;
+
+      @include mobile {
+        width: 100%;
+      }
+    }
+
+    &-img {
+      width: 45%;
+
+      @include mobile {
+        width: 100%;
+      }
+
+      & img {
+        width: 100%;
+      }
+    }
+  }
+
+  .reverse {
+    @include mobile {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__contact {
+    padding: 2rem $desktop-padding;
+    background: #212121;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+      padding: 2rem $tablet-padding;
+    }
+
+    @include mobile {
+      padding: 2rem $mobile-padding;
+    }
+
+    & h1 {
+      text-align: center;
+      color: white;
+    }
+
+    & p {
+      font-size: 1.5rem;
+      line-height: 1.75rem;
+      text-align: center;
+      color: white;
+    }
+
+    & a {
+      color: $red;
+      font-weight: 600;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    & button {
+      @include primaryButton;
+      margin: 1rem 0;
+    }
+  }
+
+  // Footer
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem $desktop-padding;
+    background: #fafafa;
+
+    &-contact {
+      font-weight: 600;
+
+      & a:hover {
+        color: $red;
+      }
+    }
+
+    @include mobile {
+      padding: 1rem 2rem;
+      flex-direction: column-reverse;
+    }
+
+    @include tablet {
+      padding: 1rem 2rem;
+    }
+  }
+}

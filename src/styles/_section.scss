@@ -1,0 +1,70 @@
+.section {
+  @include container;
+
+    &__header {
+      @include menuSectionHeader;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    &__left {
+      display: flex;
+      margin-right: 1rem;
+    }
+  
+    &__center{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex: 1;
+    }
+  
+    &__right  {
+      display: flex;
+      justify-content: space-between;
+      margin-left: 2rem;
+      width: 4rem;
+    }
+  
+  
+    &__title {
+      @include menuSectionTitle;
+      
+    }
+  
+    &__description {
+      @include bodyText;
+    }
+  
+  
+    &__button{
+      @include iconButton;
+      display: flex;
+  
+      & svg{
+        @include icons;
+      }
+    }
+  
+    &__new {
+      @include secondaryButton;
+    }
+  
+    &__submenu{
+      background: #FFF2F2;
+      text-align: left;
+      padding: 1rem 2rem;
+  
+      & button{
+        background: none;
+  
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+    
+    @include inputForm;
+  }
+  

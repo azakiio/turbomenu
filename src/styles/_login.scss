@@ -1,0 +1,72 @@
+.login{
+    @include inputForm;
+    padding: 4rem 0;
+
+    background: #FAFAFA;
+    min-height: 100vh;
+
+    &__header{
+        @include container;
+        padding: 1rem 0;
+        width: 100%;
+    }
+
+    &__logo{
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+
+    &__form{
+        padding: 2rem 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: white;
+        margin: 0% 30% 0% 30%;
+        border-radius: 1rem;
+        min-width: 400px;
+        box-shadow:
+        0 0.1px 0.4px rgba(0, 0, 0, 0.017),
+        0 0.3px 1px rgba(0, 0, 0, 0.024),
+        0 0.6px 1.9px rgba(0, 0, 0, 0.03),
+        0 1.1px 3.4px rgba(0, 0, 0, 0.036),
+        0 2.1px 6.3px rgba(0, 0, 0, 0.043),
+        0 5px 15px rgba(0, 0, 0, 0.06)
+      ;
+    }
+
+
+    &__title{
+        @include header2;
+        text-align: center;
+    }
+
+    &__signup{
+        @include bodyText;
+        text-align: center;
+        margin-bottom: 2rem;
+
+        & a{
+            color: $red;
+            font-weight: 600;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+
+    &__form-buttons{
+        justify-content: center;
+    }
+
+    button{
+        width: 100%;
+    }
+
+
+
+
+}
