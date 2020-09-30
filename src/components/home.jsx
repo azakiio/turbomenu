@@ -25,7 +25,7 @@ export default function Home() {
         </div>
       </header>
 
-      <body>
+      <section>
         <div className={`${block}__hero`}>
           <div className={`${block}__hero-content`}>
             <h1>Create a safer dining experience with a contactless menu</h1>
@@ -121,7 +121,7 @@ export default function Home() {
           </p>
           <button href="">Create your free menu</button>
         </div>
-      </body>
+      </section>
 
       <footer className={`${block}__footer`}>
         <div>

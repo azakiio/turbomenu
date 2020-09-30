@@ -51,7 +51,7 @@ function Menu(props) {
                 <div className={block + "__sectionDescription"}>{section.description}</div>
                 {section.items &&
                   section.items.map((item, itemIndex) => (
-                    <div className={block + "__item"}>
+                    <div key={itemIndex} className={block + "__item"}>
                       <div className={block + "__name-price"}>
                         <div className={block + "__itemName"}>{item.name}</div>
                         <div className={block + "__itemPrice"}>{item.price}</div>

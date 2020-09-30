@@ -1,6 +1,6 @@
 import React from 'react';
-import Builder from '../components/builder';
-import Header from '../components/header';
+import Builder from './builder';
+import Header from './header';
 
 export default function Test() {
   return (
