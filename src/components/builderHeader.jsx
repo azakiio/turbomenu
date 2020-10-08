@@ -1,35 +1,29 @@
-import React, { useState, useEffect } from "react";
-import QRCode from "qrcode.react";
-import { FaDownload } from "react-icons/fa";
-import Logo from "../assets/logo.svg";
-import firebase from "gatsby-plugin-firebase";
-import { navigate } from "gatsby";
+import React, { useState, useLayoutEffect } from "react"
+import QRCode from "qrcode.react"
+import { FaDownload } from "react-icons/fa"
+import Logo from "../assets/logo.svg"
+import firebase from "gatsby-plugin-firebase"
+import { navigate } from "gatsby"
 
-function Header(props) {
-  const block = "header";
-  const link = `https://turbo.menu/${props.id}`;
-  const [title, setTitle] = useState("Loading...");
+export default function BuilderHeader(props) {
+  const block = "header"
+  const link = `https://turbo.menu/${props.id}`
+  const [title, setTitle] = useState("Loading...")
 
-  useEffect(() => {
-    const titleRef = firebase.database().ref(`menus/${props.id}/title`);
+  useLayoutEffect(() => {
+    const titleRef = firebase.database().ref(`menus/${props.id}/title`)
     titleRef.on("value", function (snapshot) {
-      setTitle(snapshot.val());
-    });
-
-    firebase.auth().onAuthStateChanged(function (user) {
-      if (!user) {
-        navigate("/login");
-      }
-    });
-  }, [props.id]);
+      setTitle(snapshot.val())
+    })
+  }, [props.id])
 
   function handleChange(e) {
-    setTitle(e.currentTarget.value);
+    setTitle(e.currentTarget.value)
   }
 
   function handleBlur(e) {
-    const titleRef = firebase.database().ref(`menus/${props.id}/title`);
-    titleRef.set(e.currentTarget.value);
+    const titleRef = firebase.database().ref(`menus/${props.id}/title`)
+    titleRef.set(e.currentTarget.value)
   }
 
   function logout() {
@@ -37,11 +31,11 @@ function Header(props) {
       .auth()
       .signOut()
       .then(function () {
-        navigate("/login");
+        navigate("/login")
       })
       .catch(function (error) {
-        console.log(error.message);
-      });
+        console.log(error.message)
+      })
   }
 
   return (
@@ -60,7 +54,12 @@ function Header(props) {
         </div>
       </nav>
       <div className={block + "__restaurant"}>
-        <input className={block + "__title"} value={title} onChange={handleChange} onBlur={handleBlur}/>
+        <input
+          className={block + "__title"}
+          value={title}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
         <a className={block + "__link"} href={`/${props.id}`}>
           {link}
         </a>
@@ -72,7 +71,5 @@ function Header(props) {
         </div>
       </div>
     </header>
-  );
+  )
 }
-
-export default Header;

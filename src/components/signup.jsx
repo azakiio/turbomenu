@@ -1,7 +1,7 @@
 import React from "react"
-import Logo from "../assets/logo.svg";
+import Logo from "../assets/logo.svg"
 
-function Signup() {
+export default function Signup() {
   const block = "signup"
 
   return (
@@ -57,5 +57,3 @@ function Signup() {
     </div>
   )
 }
-
-export default Signup
