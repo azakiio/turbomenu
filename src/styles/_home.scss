@@ -47,7 +47,6 @@ $mobile-padding: 1rem;
       color: $black;
       margin-right: 3rem;
 
-
       &:hover {
         color: $red;
       }
@@ -283,13 +282,11 @@ $mobile-padding: 1rem;
     }
   }
 
-
-  &__buymeacoffee{
+  &__bmac {
     height: 60px !important;
     width: 217px !important;
   }
 
-  
   // Footer
 
   &__footer {
@@ -300,27 +297,25 @@ $mobile-padding: 1rem;
     padding: 1rem $desktop-padding;
     background: #fafafa;
 
-    &-support{
-
-      & p{
+    &-support {
+      & p {
         text-align: center;
         margin-top: 0;
         font-size: 0.75rem;
       }
 
-      & a{
+      & a {
         text-decoration: underline;
         color: $red;
-        
-        &:hover{
+
+        &:hover {
           color: $red;
         }
       }
 
-      @include mobile{
+      @include mobile {
         text-align: left;
       }
-
     }
 
     @include mobile {
