@@ -127,23 +127,7 @@ export default function Home() {
             Email us at <a href="mailto:hello@turbo.menu">hello@turbo.menu</a>
           </p>
         </div>
-{/* 
-        <div className={`${block}__support`}>
-          <h1>Help support TurboMenu</h1>
-          <p>TurboMenu is <strong>100% free</strong>. Please consider supporting us!
-            <br/>
-            All proceeds will go towards domain, web hosting, and cloud storage costs.
-          </p>
-          <a href="https://www.buymeacoffee.com/turbomenu" target="_blank">
-            <img className={`${block}__buymeacoffee`}
-              src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png"
-              alt="Buy Me A Coffee"
-            />
-          </a>
-        </div> */}
 
-
-       
 
       </section>
 
