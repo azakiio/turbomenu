@@ -45,6 +45,8 @@ $mobile-padding: 1rem;
     &-login {
       @include secondaryButton;
       color: $black;
+      margin-right: 3rem;
+
 
       &:hover {
         color: $red;
@@ -125,7 +127,7 @@ $mobile-padding: 1rem;
       }
     }
 
-    & button {
+    & a {
       @include primaryButton;
       margin-bottom: 2rem;
     }
@@ -281,6 +283,13 @@ $mobile-padding: 1rem;
     }
   }
 
+
+  &__buymeacoffee{
+    height: 60px !important;
+    width: 217px !important;
+  }
+
+  
   // Footer
 
   &__footer {
@@ -289,12 +298,30 @@ $mobile-padding: 1rem;
     padding: 1rem $desktop-padding;
     background: #fafafa;
 
+    &-info, &-support, &-contact{
+      width: 33%;
+    }
+
     &-contact {
       font-weight: 600;
 
       & a:hover {
         color: $red;
       }
+    }
+
+    &-support{
+      text-align: center;
+
+      & p{
+        margin-top: 0;
+        font-size: 0.75rem;
+      }
+
+      @include mobile{
+        text-align: left;
+      }
+
     }
 
     @include mobile {

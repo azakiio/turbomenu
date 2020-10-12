@@ -1,4 +1,5 @@
 import React from "react"
+import Meta from "../components/meta"
 import Logo from "../assets/logo.svg"
 import Hero from "../assets/hero.png"
 import Fast from "../assets/fast.svg"
@@ -9,19 +10,23 @@ import Personalized from "../assets/personalized.png"
 import Builder from "../assets/builder.png"
 
 export default function Home() {
-  // useTitle('TurboMenu — Contactless menus for your restaurant');
   const block = "home"
 
   return (
     <div className={block}>
+      <Meta title='TurboMenu — Contactless menus for your restaurant' />
       <header className={`${block}__header`}>
         <div className={`${block}__header-logo`}>
           <img src={Logo} alt="TurboMenu Logo"></img>
         </div>
 
         <div>
-          <button className={`${block}__header-login`}>Log in</button>
-          <button className={`${block}__header-signup`}>Sign up</button>
+          <a className={`${block}__header-login`} href="/login">
+            Log in
+          </a>
+          <a className={`${block}__header-signup`} href="/signup">
+            Sign up
+          </a>
         </div>
       </header>
 
@@ -32,7 +37,9 @@ export default function Home() {
             <p>
               Easily create and manage a contactless menu for your restaurant
             </p>
-            <button href="">Create your free menu</button>
+            <a class="" href="/signup">
+              Create your free menu
+            </a>
           </div>
 
           <img className={`${block}__hero-img`} src={Hero} alt="" />
@@ -119,16 +126,43 @@ export default function Home() {
           <p>
             Email us at <a href="mailto:hello@turbo.menu">hello@turbo.menu</a>
           </p>
-          <button href="">Create your free menu</button>
         </div>
+{/* 
+        <div className={`${block}__support`}>
+          <h1>Help support TurboMenu</h1>
+          <p>TurboMenu is <strong>100% free</strong>. Please consider supporting us!
+            <br/>
+            All proceeds will go towards domain, web hosting, and cloud storage costs.
+          </p>
+          <a href="https://www.buymeacoffee.com/turbomenu" target="_blank">
+            <img className={`${block}__buymeacoffee`}
+              src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png"
+              alt="Buy Me A Coffee"
+            />
+          </a>
+        </div> */}
+
+
+       
+
       </section>
 
       <footer className={`${block}__footer`}>
-        <div>
+        <div className={`${block}__footer-info`}>
           <p>
-            Made in Toronto, Canada ♥
+            Made with ♥ in Toronto, Canada
             <br />© TurboMenu. All Rights Reserved.
           </p>
+        </div>
+
+        <div className={`${block}__footer-support`}>
+          <a href="https://www.buymeacoffee.com/turbomenu" target="_blank">
+            <img className={`${block}__buymeacoffee`}
+              src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png"
+              alt="Buy Me A Coffee"
+            />
+          </a>
+          <p>TurboMenu is 100% free and open-source. Please consider supporting us!</p>
         </div>
 
         <div className={`${block}__footer-contact`}>

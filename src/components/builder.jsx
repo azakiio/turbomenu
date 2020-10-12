@@ -7,7 +7,7 @@ import { navigate } from "gatsby"
 export default function Builder() {
   firebase.auth().onAuthStateChanged(function (user) {
     if(user) {
-      console.log(user.getIdToken())
+      console.log(user.uid)
     }
     if (!user) {
       navigate("/login")
