@@ -294,28 +294,27 @@ $mobile-padding: 1rem;
 
   &__footer {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
     padding: 1rem $desktop-padding;
     background: #fafafa;
 
-    &-info, &-support, &-contact{
-      width: 33%;
-    }
-
-    &-contact {
-      font-weight: 600;
-
-      & a:hover {
-        color: $red;
-      }
-    }
-
     &-support{
-      text-align: center;
 
       & p{
+        text-align: center;
         margin-top: 0;
         font-size: 0.75rem;
+      }
+
+      & a{
+        text-decoration: underline;
+        color: $red;
+        
+        &:hover{
+          color: $red;
+        }
       }
 
       @include mobile{
@@ -326,7 +325,6 @@ $mobile-padding: 1rem;
 
     @include mobile {
       padding: 1rem 2rem;
-      flex-direction: column-reverse;
     }
 
     @include tablet {

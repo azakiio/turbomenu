@@ -1,0 +1,37 @@
+.error{
+
+    h1 {
+        @include header1;
+        margin: 2rem 0;
+      }
+
+    a {
+        @include primaryButton;
+    }
+
+    &-img {
+        margin: 2rem;
+        height: 50%;
+
+        @include mobile{
+            width: 100%;
+            height: auto;
+        }
+
+        @include tablet{
+            height: 30%;
+            width: auto;
+        }
+    }
+    
+
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}

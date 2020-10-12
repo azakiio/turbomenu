@@ -132,31 +132,22 @@ export default function Home() {
       </section>
 
       <footer className={`${block}__footer`}>
-        <div className={`${block}__footer-info`}>
-          <p>
-            Made with ♥ in Toronto, Canada
-            <br />© TurboMenu. All Rights Reserved.
-          </p>
-        </div>
-
+        <p>
+          Made with ♥ in Toronto, Canada
+        </p>
         <div className={`${block}__footer-support`}>
-          <a href="https://www.buymeacoffee.com/turbomenu" target="_blank">
-            <img className={`${block}__buymeacoffee`}
-              src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png"
-              alt="Buy Me A Coffee"
-            />
-          </a>
-          <p>TurboMenu is 100% free and open-source. Please consider supporting us!</p>
-        </div>
-
-        <div className={`${block}__footer-contact`}>
           <p>
-            <a href="mailto:hello@turbo.menu">hello@turbo.menu</a>
-            <br />
-            <a href="tel:6479708575">(647) 970-8575</a>
+              TurboMenu is 100% free and <a href="">open-source</a>. You can support us by clicking below.
           </p>
+          <a href="https://www.buymeacoffee.com/turbomenu" target="_blank">
+              <img className={`${block}__buymeacoffee`}
+                src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png"
+                alt="Buy Me A Coffee"
+              />
+            </a>
         </div>
       </footer>
+
     </div>
   )
 }
