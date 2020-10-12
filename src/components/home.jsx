@@ -1,30 +1,30 @@
-import React from "react"
-import Meta from "../components/meta"
-import Logo from "../assets/logo.svg"
-import Hero from "../assets/hero.png"
-import Fast from "../assets/fast.svg"
-import Money from "../assets/money.svg"
-import Safe from "../assets/safe.svg"
-import TMvsPDF from "../assets/TMvsPDF.png"
-import Personalized from "../assets/personalized.png"
-import Builder from "../assets/builder.png"
+import React from 'react'
+import Meta from '../components/meta'
+import Logo from '../assets/logo.svg'
+import Hero from '../assets/hero.png'
+import Fast from '../assets/fast.svg'
+import Money from '../assets/money.svg'
+import Safe from '../assets/safe.svg'
+import TMvsPDF from '../assets/TMvsPDF.png'
+import Personalized from '../assets/personalized.png'
+import Builder from '../assets/builder.png'
 
-export default function Home() {
-  const block = "home"
+export default function Home () {
+  const block = 'home'
 
   return (
     <div className={block}>
       <Meta title='TurboMenu — Contactless menus for your restaurant' />
       <header className={`${block}__header`}>
         <div className={`${block}__header-logo`}>
-          <img src={Logo} alt="TurboMenu Logo"></img>
+          <img src={Logo} alt='TurboMenu Logo'></img>
         </div>
 
         <div>
-          <a className={`${block}__header-login`} href="/login">
+          <a className={`${block}__header-login`} href='/login'>
             Log in
           </a>
-          <a className={`${block}__header-signup`} href="/signup">
+          <a className={`${block}__header-signup`} href='/signup'>
             Sign up
           </a>
         </div>
@@ -37,12 +37,12 @@ export default function Home() {
             <p>
               Easily create and manage a contactless menu for your restaurant
             </p>
-            <a class="" href="/signup">
+            <a className='' href='/signup'>
               Create your free menu
             </a>
           </div>
 
-          <img className={`${block}__hero-img`} src={Hero} alt="" />
+          <img className={`${block}__hero-img`} src={Hero} alt='' />
         </div>
 
         <div className={`${block}__3-col`}>
@@ -50,7 +50,7 @@ export default function Home() {
 
           <div className={`${block}__3-col-section`}>
             <div className={`${block}__3-col-section-item`}>
-              <img src={Safe} alt="" />
+              <img src={Safe} alt='' />
               <div className={`${block}__3-col-section-content`}>
                 <h2>Cleaner</h2>
                 <p>
@@ -60,7 +60,7 @@ export default function Home() {
             </div>
 
             <div className={`${block}__3-col-section-item`}>
-              <img src={Fast} alt="" />
+              <img src={Fast} alt='' />
               <div className={`${block}__3-col-section-content`}>
                 <h2>Faster</h2>
                 <p>
@@ -71,7 +71,7 @@ export default function Home() {
             </div>
 
             <div className={`${block}__3-col-section-item`}>
-              <img src={Money} alt="" />
+              <img src={Money} alt='' />
               <div className={`${block}__3-col-section-content`}>
                 <h2>Cheaper</h2>
                 <p>
@@ -91,13 +91,13 @@ export default function Home() {
             </p>
           </div>
           <div className={`${block}__2-col-img`}>
-            <img src={TMvsPDF} alt="" />
+            <img src={TMvsPDF} alt='' />
           </div>
         </div>
 
         <div className={`${block}__2-col reverse`}>
           <div className={`${block}__2-col-img`}>
-            <img src={Builder} alt="" />
+            <img src={Builder} alt='' />
           </div>
           <div className={`${block}__2-col-content`}>
             <h1>Hassle-free management</h1>
@@ -117,18 +117,16 @@ export default function Home() {
             </p>
           </div>
           <div className={`${block}__2-col-img`}>
-            <img src={Personalized} alt="" />
+            <img src={Personalized} alt='' />
           </div>
         </div>
 
         <div className={`${block}__contact`}>
           <h1>Questions?</h1>
           <p>
-            Email us at <a href="mailto:hello@turbo.menu">hello@turbo.menu</a>
+            Email us at <a href='mailto:hello@turbo.menu'>hello@turbo.menu</a>
           </p>
         </div>
-
-
       </section>
 
       <footer className={`${block}__footer`}>
@@ -140,20 +138,28 @@ export default function Home() {
         </div>
 
         <div className={`${block}__footer-support`}>
-          <a href="https://www.buymeacoffee.com/turbomenu" target="_blank">
-            <img className={`${block}__buymeacoffee`}
-              src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png"
-              alt="Buy Me A Coffee"
+          <a
+            href='https://www.buymeacoffee.com/turbomenu'
+            rel='noreferrer'
+            target='_blank'
+          >
+            <img
+              className={`${block}__buymeacoffee`}
+              src='https://cdn.buymeacoffee.com/buttons/v2/default-red.png'
+              alt='Buy Me A Coffee'
             />
           </a>
-          <p>TurboMenu is 100% free and open-source. Please consider supporting us!</p>
+          <p>
+            TurboMenu is 100% free and open-source. Please consider supporting
+            us!
+          </p>
         </div>
 
         <div className={`${block}__footer-contact`}>
           <p>
-            <a href="mailto:hello@turbo.menu">hello@turbo.menu</a>
+            <a href='mailto:hello@turbo.menu'>hello@turbo.menu</a>
             <br />
-            <a href="tel:6479708575">(647) 970-8575</a>
+            <a href='tel:6479708575'>(647) 970-8575</a>
           </p>
         </div>
       </footer>
