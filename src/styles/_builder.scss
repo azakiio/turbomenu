@@ -10,4 +10,30 @@
     @include primaryButton;
     margin-top: 2rem;
   }
+
+  &__head{
+    margin: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid $primary;
+
+   
+
+    &-btns{
+      display: flex;
+      justify-content: space-between;
+
+      &-secondary{
+        @include secondaryButton;
+        margin-right: 2rem;
+      }
+  
+      &-primary{
+        @include primaryButton;
+      }
+    }
+  }
+
+  
 }

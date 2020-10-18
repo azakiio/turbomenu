@@ -1,6 +1,7 @@
 import React, { useState, useLayoutEffect } from "react"
 import QRCode from "qrcode.react"
 import { FaDownload } from "react-icons/fa"
+//import { FaSignOutAlt } from "react-icons/fa"
 import Logo from "../assets/logo.svg"
 import firebase from "gatsby-plugin-firebase"
 import { navigate } from "gatsby"
@@ -45,11 +46,11 @@ export default function BuilderHeader(props) {
           <img src={Logo} alt="TurboMenu Logo"></img>
         </a>
         <div className={block + "__right"}>
-          <a className={block + "__navLink"} href="/">
+          {/* <a className={block + "__navLink"} href="/">
             Account
-          </a>
+          </a> */}
           <button onClick={logout} className={block + "__navLink"} href="/">
-            Logout
+            *ICON* Log out
           </button>
         </div>
       </nav>
