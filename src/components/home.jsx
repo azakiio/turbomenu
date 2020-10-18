@@ -135,10 +135,10 @@ export default function Home () {
         </p>
         <div className={`${block}__footer-support`}>
           <p>
-              TurboMenu is 100% free and <a href="">open-source</a>. You can support us by clicking below.
+              TurboMenu is 100% free and <a href="https://github.com/azakiio/turbomenu">open-source</a>. You can support us by clicking below.
           </p>
-          <a href="https://www.buymeacoffee.com/turbomenu" target="_blank">
-              <img className={`${block}__buymeacoffee`}
+          <a href="https://www.buymeacoffee.com/turbomenu" target="_blank" rel="noreferrer">
+              <img className={`${block}__bmac`}
                 src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png"
                 alt="Buy Me A Coffee"
               />
