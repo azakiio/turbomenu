@@ -3,17 +3,11 @@ $background: #fafafa;
 
 .menu {
   &__loading {
-    @include header3;
-    background: white;
-    height: 100vh;
-    width: 100vw;
+    margin-top: 45vh;
     text-align: center;
 
-    &-logo {
-      margin-top: 50%;
-    }
-
-    &-message {
+    &-text {
+      @include header3;
       margin-top: 2rem;
     }
   }

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useLayoutEffect } from "react"
 import Logo from "../assets/logo.svg"
 import firebase from "gatsby-plugin-firebase"
 import { navigate } from "gatsby"
@@ -6,7 +6,7 @@ import { navigate } from "gatsby"
 function Login() {
   const block = "login"
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
         navigate("/builder")
