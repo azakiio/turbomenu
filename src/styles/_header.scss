@@ -16,13 +16,24 @@
 
     &__navLink {
         @include navLink;
-        margin-left: 1.5rem;
+        background: white;
+            border: none;
+
+        & button{
+            background: white;
+            border: none;
+        }
     }
 
     &__title{
         @include restaurantTitle;
         margin-bottom: 0.5rem;
         width: fit-content;
+        border: 1px solid white;
+
+        &:hover{
+            border: 1px solid black;
+        }
     }
 
     &__link {

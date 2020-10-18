@@ -58,11 +58,16 @@ $tablet-breakpoint: 1024px;
 @mixin navLink {
   font-family: $secondary-font;
   font-size: 1rem;
+  font-weight: 600;
   color: $grey;
   text-align: center;
+  background: white;
+  border: none;
 
   &:hover {
     color: $primary;
+    text-decoration: underline;
+    cursor: pointer;
   }
 }
 

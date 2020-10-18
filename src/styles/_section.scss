@@ -46,6 +46,11 @@
         @include icons;
       }
     }
+
+    &__form{
+      padding: 2rem;
+      background: #FAFAFA;
+    }
   
     &__new {
       @include secondaryButton;

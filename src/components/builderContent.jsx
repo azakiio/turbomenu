@@ -90,7 +90,18 @@ export default function BuilderContent(props) {
 
   return (
     <main className={block}>
-      <h2 className={block + "__title"}>Menu</h2>
+      <div className={`${block}__head`}>
+        <h2 className={block + "__title"}>Menu</h2>
+        <div className={`${block}__head-btns`}>
+          <button className={block + "__head-btns-secondary"} onClick={() => setSectionInput(!isSectionInput)}>
+            + Add menu section
+          </button>
+          <button className={`${block}__head-btns-primary`} onClick={() => save()}>
+              Save
+          </button>
+        </div>
+       
+      </div>
       {!menu.length && !isSectionInput && <p>Start building your menu by adding your first menu section.</p>}
       <div className={block + "__menu"}>
         {menu.map((item, index) => (
@@ -112,7 +123,7 @@ export default function BuilderContent(props) {
       {isSectionInput && <Section addSection={addSection} cancelSection={cancelSection} firstTime={true} />}
       {!isSectionInput && (
         <>
-          <button className={block + "__new"} onClick={() => setSectionInput(!isSectionInput)}>
+          <button className={block + "__secondary"} onClick={() => setSectionInput(!isSectionInput)}>
             + Add menu section
           </button>
           <button className={`${block}__new`} onClick={() => save()}>
