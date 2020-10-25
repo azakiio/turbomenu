@@ -53,7 +53,7 @@ export default function BuilderContent(props) {
     setMenu(
       update(menu, {
         [sectionIndex]: {
-          items: {
+          items: items => update(items || [], {
             $push: [
               {
                 name: event.target.name.value,
@@ -61,7 +61,7 @@ export default function BuilderContent(props) {
                 description: event.target.description.value,
               },
             ],
-          },
+          }),
         },
       })
     );
@@ -121,7 +121,7 @@ export default function BuilderContent(props) {
         ))}
       </div>
       {isSectionInput && <Section addSection={addSection} cancelSection={cancelSection} firstTime={true} />}
-      {!isSectionInput && (
+      {/* {!isSectionInput && (
         <>
           <button className={block + "__secondary"} onClick={() => setSectionInput(!isSectionInput)}>
             + Add menu section
@@ -130,7 +130,7 @@ export default function BuilderContent(props) {
             Save
           </button>
         </>
-      )}
+      )} */}
     </main>
   );
 }

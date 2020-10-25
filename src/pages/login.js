@@ -16,16 +16,14 @@ function Login() {
 
   function login(e) {
     e.preventDefault()
-    var email = e.target.email.value
-    var password = e.target.password.value
+    const email = e.target.email.value
+    const password = e.target.password.value
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
       .catch(function (error) {
         console.log(error.message)
       })
-    email = null
-    password = null
   }
 
   return (
