@@ -37,6 +37,11 @@
         0 5px 15px rgba(0, 0, 0, 0.06)
       ;
 
+      & input{
+        // border: 2px solid $red;
+        // background: #FFE7E7;
+      }
+
       @include tablet{
         margin: 0% 20% 0% 20%;
       }
@@ -49,6 +54,11 @@
       }
     }
 
+    &__invalid{
+        color: $red;
+        margin: -1.5rem 0 1rem 0;
+        font-size: 0.75rem;
+    }
 
     &__title{
         @include header2;
@@ -92,6 +102,7 @@
     }
 
     button{
+        margin-top: 1rem;
         width: 100%;
     }
 

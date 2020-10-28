@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+// import SweetAlert from 'sweetalert-react';
 import { FaChevronRight, FaChevronDown, FaPen, FaTrash } from "react-icons/fa"
 import Item from "./item"
 
@@ -36,8 +37,8 @@ function Section(props) {
           <label className={block + "__form-name"}>
             Name{" "}
             <input
-              name="name"
-              type="text"
+              name='name'
+              type='text'
               defaultValue={props.firstTime ? "" : props.name}
               required
             />
@@ -45,17 +46,17 @@ function Section(props) {
           <label className={block + "__form-description"}>
             Description (Optional)
             <input
-              name="description"
-              type="text"
+              name='description'
+              type='text'
               defaultValue={props.firstTime ? "" : props.description}
             />
           </label>
           <div className={block + "__form-buttons"}>
-            <button type="submit" className={block + "__form-add"}>
+            <button type='submit' className={block + "__form-add"}>
               Save
             </button>
             <button
-              type="reset"
+              type='reset'
               onClick={
                 props.firstTime ? props.cancelSection : () => setEditing(false)
               }

@@ -1,7 +1,6 @@
 import React, { useState, useLayoutEffect } from "react"
 import QRCode from "qrcode.react"
-import { FaDownload } from "react-icons/fa"
-//import { FaSignOutAlt } from "react-icons/fa"
+import { FaDownload, FaSignOutAlt } from "react-icons/fa"
 import Logo from "../assets/logo.svg"
 import firebase from "gatsby-plugin-firebase"
 import { navigate } from "gatsby"
@@ -50,7 +49,7 @@ export default function BuilderHeader(props) {
             Account
           </a> */}
           <button onClick={logout} className={block + "__navLink"} href="/">
-            *ICON* Log out
+            < FaSignOutAlt/> Log out
           </button>
         </div>
       </nav>

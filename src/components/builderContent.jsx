@@ -12,7 +12,9 @@ export default function BuilderContent(props) {
   useEffect(() => {
     const menuRef = firebase.database().ref(`menus/${props.id}/menu`);
     menuRef.once("value").then(function (snapshot) {
-      setMenu(snapshot.val());
+      if(snapshot.exists()){
+        setMenu(snapshot.val());
+      }
     });
   }, [props.id]);
   
@@ -121,16 +123,6 @@ export default function BuilderContent(props) {
         ))}
       </div>
       {isSectionInput && <Section addSection={addSection} cancelSection={cancelSection} firstTime={true} />}
-      {/* {!isSectionInput && (
-        <>
-          <button className={block + "__secondary"} onClick={() => setSectionInput(!isSectionInput)}>
-            + Add menu section
-          </button>
-          <button className={`${block}__new`} onClick={() => save()}>
-            Save
-          </button>
-        </>
-      )} */}
     </main>
   );
 }
