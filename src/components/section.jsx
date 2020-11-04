@@ -74,12 +74,13 @@ function Section(props) {
               onClick={() => setMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <FaChevronDown /> : <FaChevronRight />}
+              <div className={block + "__center"}>
+                <div className={block + "__title"}>{props.name}</div>
+                <div className={block + "__description"}>
+                  {props.description}
+                </div>
+              </div>
             </button>
-          </div>
-
-          <div className={block + "__center"}>
-            <div className={block + "__title"}>{props.name}</div>
-            <div className={block + "__description"}>{props.description}</div>
           </div>
 
           <div className={block + "__right"}>

@@ -7,6 +7,8 @@ $primary-font: "Cabin";
 $secondary-font: "Open Sans";
 $mobile-breakpoint: 767px;
 $tablet-breakpoint: 1024px;
+$red: #e00000;
+$background: #fafafa;
 
 @mixin mobile {
   @media (max-width: $mobile-breakpoint) {
@@ -140,6 +142,7 @@ $tablet-breakpoint: 1024px;
 @mixin secondaryButton {
   @include btn;
 
+  padding: 1rem 2rem;
   background: white;
   color: $primary;
 }
@@ -201,11 +204,11 @@ $tablet-breakpoint: 1024px;
 
   &:hover{
     color: $grey;
-    cursor: pointer;
   }
 }
 
 @mixin iconButton{
+  cursor: pointer;
   background: none;
   border: none;
 }

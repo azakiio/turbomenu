@@ -41,15 +41,12 @@ export default function BuilderHeader(props) {
   return (
     <header className={block}>
       <nav className={block + "__nav"}>
-        <a href="/" className={block + "__logo"}>
-          <img src={Logo} alt="TurboMenu Logo"></img>
+        <a href='/' className={block + "__logo"}>
+          <img src={Logo} alt='TurboMenu Logo'></img>
         </a>
         <div className={block + "__right"}>
-          {/* <a className={block + "__navLink"} href="/">
-            Account
-          </a> */}
-          <button onClick={logout} className={block + "__navLink"} href="/">
-            < FaSignOutAlt/> Log out
+          <button onClick={logout} className={block + "__navLink"} href='/'>
+            <FaSignOutAlt /> Log out
           </button>
         </div>
       </nav>
@@ -64,7 +61,7 @@ export default function BuilderHeader(props) {
           {link}
         </a>
         <div className={block + "__qr-container"}>
-          <QRCode value={link} />
+          <QRCode value={link} renderAs='svg'/>
           <button className={block + "__download"}>
             <FaDownload /> Download
           </button>

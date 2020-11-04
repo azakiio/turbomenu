@@ -1,15 +1,14 @@
-import React, { useRef, useState, useLayoutEffect } from "react"
+import React, { useState, useLayoutEffect } from "react"
 import firebase from "gatsby-plugin-firebase"
 import Logo from "../assets/logo.svg"
 import { navigate } from "gatsby"
 
 export default function Signup() {
   const block = "signup"
-  const turboId = useRef()
 
   // const [invalidPass, setInvalidPass] = useState(false)
-  // const [invalidEmail, setInvaliedEmail] = useState(false)
-  const [invalidID, setInvalidID] = useState(false)
+  const [isValidEmail, setIsValidEmail] = useState(true)
+  const [isValidId, setIsValidID] = useState(true)
 
   useLayoutEffect(() => {
     firebase.auth().onAuthStateChanged(function (user) {
@@ -26,11 +25,19 @@ export default function Signup() {
     const menuRef = firebase.database().ref(`menus/${e.target.value}`)
     menuRef.once("value").then(snapshot => {
       if (snapshot.exists()) {
-        setInvalidID(true)
+        setIsValidID(false)
       } else {
-        setInvalidID(false)
+        setIsValidID(true)
       }
     })
+  }
+
+  function validatePassword(e) {
+    if (e.target.validity.typeMismatch) {
+      e.target.setCustomValidity("Please use at least 6 characters.")
+    } else {
+      e.target.setCustomValidity("")
+    }
   }
 
   function signUp(e) {
@@ -40,13 +47,7 @@ export default function Signup() {
     const email = e.target.email.value
     const password = e.target.password.value
 
-    if (e.target.password.validity.typeMismatch) {
-      e.target.password.setCustomValidity("Please use at least 6 characters.")
-    } else {
-      e.target.password.setCustomValidity("")
-    }
-
-    if (invalidID) {
+    if (!isValidId) {
       return
     }
 
@@ -67,7 +68,7 @@ export default function Signup() {
         })
       })
       .catch(e => {
-        console.log(e)
+        setIsValidEmail(false)
       })
   }
 
@@ -92,7 +93,7 @@ export default function Signup() {
           />
         </label>
 
-        <label ref={turboId} className={block + "__form-label"}>
+        <label className={block + "__form-label"}>
           Custom Link
           <div className={`${block}__tm-link`}>
             <span className={`${block}__tm-text`}>turbo.menu/</span>
@@ -104,7 +105,7 @@ export default function Signup() {
               onChange={checkExists}
             />
           </div>
-          {invalidID && (
+          {!isValidId && (
             <div className={`${block}__invalid`}>
               Sorry, this link is already taken. Please try again.
             </div>
@@ -113,7 +114,12 @@ export default function Signup() {
 
         <label className={block + "__form-label"}>
           Email
-          <input name='email' type='text' placeholder='email@example.com' />
+          <input name='email' type='email' placeholder='email@example.com' />
+          {!isValidEmail && (
+            <div className={`${block}__invalid`}>
+              This email is already in use, please <a href='/login'>Login</a>
+            </div>
+          )}
         </label>
 
         <label className={block + "__form-label"}>
@@ -122,8 +128,9 @@ export default function Signup() {
             name='password'
             type='password'
             required
-            minlength='6'
+            minLength='6'
             placeholder='Use at least 6 characters'
+            onChange={validatePassword}
           />
         </label>
 

@@ -31,6 +31,7 @@ $mobile-padding: 1rem;
   &__header {
     padding: 1rem $desktop-padding;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 
@@ -38,14 +39,27 @@ $mobile-padding: 1rem;
       padding: 1rem $tablet-padding;
     }
 
-    &-logo img {
-      height: 3rem;
+    @include mobile {
+      justify-content: space-around;
+    }
+
+    &-links{
+      margin-top: 1rem;
+      display: flex;
+    }
+
+    &-logo {
+      margin: 1rem;
+
+      & img {
+        height: 3rem;
+      }
     }
 
     &-login {
+      display: block;
       @include secondaryButton;
       color: $black;
-      margin-right: 3rem;
 
       &:hover {
         color: $red;
@@ -53,6 +67,7 @@ $mobile-padding: 1rem;
     }
 
     &-signup {
+      display: block;
       @include primaryButton;
     }
   }
@@ -95,6 +110,7 @@ $mobile-padding: 1rem;
       @include mobile {
         width: 100%;
         align-items: center;
+        margin-bottom: 4rem;
       }
 
       @include tablet {
@@ -126,9 +142,20 @@ $mobile-padding: 1rem;
       }
     }
 
-    & a {
+    &-links {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -0.5rem;
+
+      @include mobile {
+        justify-content: center;
+      }
+    }
+
+    &-link {
+      display: block;
       @include primaryButton;
-      margin-bottom: 2rem;
+      margin: 0.5rem;
     }
   }
 
@@ -241,7 +268,7 @@ $mobile-padding: 1rem;
 
   &__contact {
     padding: 2rem $desktop-padding;
-    background: #212121;
+    background: #fafafa;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -261,10 +288,12 @@ $mobile-padding: 1rem;
     }
 
     & p {
-      font-size: 1.5rem;
+      margin: 0;
+      margin-bottom: 1.25rem;
+      font-size: 1.25rem;
       line-height: 1.75rem;
       text-align: center;
-      color: white;
+      color: $black;
     }
 
     & a {
@@ -282,9 +311,13 @@ $mobile-padding: 1rem;
     }
   }
 
-  &__bmac {
-    height: 60px !important;
-    width: 217px !important;
+  &__bmc {
+    height: 3.75rem;
+    transition: transform 0.5s;
+
+    &:hover{
+      transform: scale(1.2);
+    }
   }
 
   // Footer

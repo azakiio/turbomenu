@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import update from "immutability-helper";
 import Section from "./section";
 import firebase from "gatsby-plugin-firebase";
-
 
 export default function BuilderContent(props) {
   const block = "builder";
@@ -21,6 +20,11 @@ export default function BuilderContent(props) {
   function save() {
     const menuRef = firebase.database().ref(`menus/${props.id}/menu`);
     menuRef.set(menu);
+  }
+
+  function addSectionHandler(){
+    setSectionInput(!isSectionInput);
+    window.scrollTo(0,document.body.scrollHeight);
   }
 
   function addSection(event) {
@@ -95,7 +99,7 @@ export default function BuilderContent(props) {
       <div className={`${block}__head`}>
         <h2 className={block + "__title"}>Menu</h2>
         <div className={`${block}__head-btns`}>
-          <button className={block + "__head-btns-secondary"} onClick={() => setSectionInput(!isSectionInput)}>
+          <button className={block + "__head-btns-secondary"} onClick={addSectionHandler}>
             + Add menu section
           </button>
           <button className={`${block}__head-btns-primary`} onClick={() => save()}>

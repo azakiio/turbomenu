@@ -7,6 +7,7 @@ import Money from "../assets/money.svg"
 import Safe from "../assets/safe.svg"
 import TMvsPDF from "../assets/TMvsPDF.png"
 import Personalized from "../assets/personalized.png"
+import BMC from "../assets/BMC.svg"
 import Builder from "../assets/builder.png"
 
 export default function Home() {
@@ -20,7 +21,7 @@ export default function Home() {
           <img src={Logo} alt='TurboMenu Logo'></img>
         </div>
 
-        <div>
+        <div className={`${block}__header-links`}>
           <a className={`${block}__header-login`} href='/login'>
             Log in
           </a>
@@ -37,9 +38,14 @@ export default function Home() {
             <p>
               Easily create and manage a contactless menu for your restaurant
             </p>
-            <a className='' href='/signup'>
-              Create your free menu
-            </a>
+            <div className={`${block}__hero-links`}>
+              <a className={`${block}__hero-link`} href='/signup'>
+                Create your free menu
+              </a>
+              <a className={`${block}__hero-link`} href='/demo'>
+                See a demo
+              </a>
+            </div>
           </div>
 
           <img className={`${block}__hero-img`} src={Hero} alt='' />
@@ -121,35 +127,32 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={`${block}__contact`}>
-          <h1>Questions?</h1>
+        <footer className={`${block}__contact`}>
           <p>
-            Email us at <a href='mailto:hello@turbo.menu'>hello@turbo.menu</a>
+            Made with{" "}
+            <span role='img' aria-label='heart'>
+              ❤️
+            </span>{" "}
+            in Toronto
           </p>
-        </div>
-      </section>
-
-      <footer className={`${block}__footer`}>
-        <p>Made with <span role="img" aria-label="heart">❤️</span> in Toronto</p>
-        <div className={`${block}__footer-support`}>
+          <p>
+            Questions? Reach out:{" "}
+            <a href='mailto:hello@turbo.menu'>hello@turbo.menu</a>
+          </p>
           <p>
             TurboMenu is 100% free and{" "}
-            <a href='https://github.com/azakiio/turbomenu'>open-source</a>. You
-            can support us by clicking below.
+            <a href='https://github.com/azakiio/turbomenu'>open-source</a>,
+            consider supporting us.
           </p>
           <a
             href='https://www.buymeacoffee.com/turbomenu'
             target='_blank'
             rel='noreferrer'
           >
-            <img
-              className={`${block}__bmac`}
-              src='https://cdn.buymeacoffee.com/buttons/v2/default-red.png'
-              alt='Buy Me A Coffee'
-            />
+            <img className={`${block}__bmc`} src={BMC} alt='Buy Me A Coffee' />
           </a>
-        </div>
-      </footer>
+        </footer>
+      </section>
     </div>
   )
 }
