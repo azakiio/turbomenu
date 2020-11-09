@@ -2,10 +2,13 @@ import React from "react"
 import { Helmet } from "react-helmet"
 
 export default function Meta(props) {
+
+  const {title, description} = props
+
   return (
     <Helmet>
-      <title>TurboMenu — Free contactless menu for your restaurant</title>
-      <meta name="title" content="TurboMenu — Free contactless menu for your restaurant"/>
+      <title>{title}</title>
+      <meta name="title" content={title}/>
       <meta name="description" content="TurboMenu is a free tool that allows you to create a mobile-friendly contactless menu to deliver a safer dining experience during COVID-19."/>
 
       <meta property="og:type" content="website"/>

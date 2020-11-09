@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <div className={block}>
-      <Meta title='TurboMenu — Contactless menus for your restaurant' />
+      <Meta title='TurboMenu — Contactless menus for your restaurant' description='TurboMenu is a free tool that allows you to create a mobile-friendly contactless menu to deliver a safer dining experience during COVID-19.' />
       <header className={`${block}__header`}>
         <div className={`${block}__header-logo`}>
           <img src={Logo} alt='TurboMenu Logo'></img>
@@ -42,7 +42,7 @@ export default function Home() {
               <a className={`${block}__hero-link`} href='/signup'>
                 Create your free menu
               </a>
-              <a className={`${block}__hero-link`} href='/demo'>
+              <a className={`${block}__hero-secondary`} href='/demo'>
                 See a demo
               </a>
             </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import firebase from "gatsby-plugin-firebase"
 import Logo from "../assets/logo.svg"
 import NotFound from "../components/notFound"
+import Meta from "../components/meta"
 
 export default function Menu(props) {
   const block = "menu"
@@ -29,6 +30,7 @@ export default function Menu(props) {
 
   return (
     <>
+    <Meta title={title + " - TurboMenu"} description={title + "'s contactless menu. Created using TurboMenu."}/>
       {state === "loading" && (
         <div className={block + "__loading"}>
           <img src={Logo} alt='TurboMenu Logo'></img>
