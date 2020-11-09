@@ -28,6 +28,7 @@ function Login() {
 
   return (
     <div className={block}>
+      <Meta title='TurboMenu — Log in' description='TurboMenu is a free tool that allows you to create a mobile-friendly contactless menu to deliver a safer dining experience during COVID-19.' />
       <form className={`${block}__form`} onSubmit={login}>
         <div className={`${block}__logo`}>
           <img src={Logo} alt='TurboMenu Logo'></img>

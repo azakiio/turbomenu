@@ -46,6 +46,10 @@ $mobile-padding: 1rem;
     &-links{
       margin-top: 1rem;
       display: flex;
+
+      @include mobile{
+        margin-top: 5rem;
+      }
     }
 
     &-logo {
@@ -155,6 +159,11 @@ $mobile-padding: 1rem;
     &-link {
       display: block;
       @include primaryButton;
+      margin: 0.5rem;
+    }
+
+    &-secondary{ 
+      @include secondaryButton;
       margin: 0.5rem;
     }
   }

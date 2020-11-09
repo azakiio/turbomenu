@@ -40,6 +40,7 @@ export default function BuilderHeader(props) {
 
   return (
     <header className={block}>
+      <Meta title={"TurboMenu —" + {title}} description='' />
       <nav className={block + "__nav"}>
         <a href='/' className={block + "__logo"}>
           <img src={Logo} alt='TurboMenu Logo'></img>
