@@ -9,6 +9,7 @@ import TMvsPDF from "../assets/TMvsPDF.png"
 import Personalized from "../assets/personalized.png"
 import BMC from "../assets/BMC.svg"
 import Builder from "../assets/builder.png"
+import { Link } from "gatsby"
 
 export default function Home() {
   const block = "home"
@@ -22,12 +23,12 @@ export default function Home() {
         </div>
 
         <div className={`${block}__header-links`}>
-          <a className={`${block}__header-login`} href='/login'>
+          <Link className={`${block}__header-login`} href='/login'>
             Log in
-          </a>
-          <a className={`${block}__header-signup`} href='/signup'>
+          </Link>
+          <Link className={`${block}__header-signup`} href='/signup'>
             Sign up
-          </a>
+          </Link>
         </div>
       </header>
 
@@ -39,12 +40,12 @@ export default function Home() {
               Easily create and manage a contactless menu for your restaurant
             </p>
             <div className={`${block}__hero-links`}>
-              <a className={`${block}__hero-link`} href='/signup'>
+              <Link className={`${block}__hero-link`} href='/signup'>
                 Create your free menu
-              </a>
-              <a className={`${block}__hero-secondary`} href='/demo'>
+              </Link>
+              <Link className={`${block}__hero-secondary`} href='/demo'>
                 See a demo
-              </a>
+              </Link>
             </div>
           </div>
 

@@ -1,7 +1,8 @@
 import React, { useLayoutEffect } from "react"
+import Meta from "../components/meta"
 import Logo from "../assets/logo.svg"
 import firebase from "gatsby-plugin-firebase"
-import { navigate } from "gatsby"
+import { Link, navigate } from "gatsby"
 
 function Login() {
   const block = "login"
@@ -30,13 +31,13 @@ function Login() {
     <div className={block}>
       <Meta title='TurboMenu — Log in' description='TurboMenu is a free tool that allows you to create a mobile-friendly contactless menu to deliver a safer dining experience during COVID-19.' />
       <form className={`${block}__form`} onSubmit={login}>
-        <div className={`${block}__logo`}>
+        <Link href="/" className={`${block}__logo`}>
           <img src={Logo} alt='TurboMenu Logo'></img>
-        </div>
+        </Link>
         <h2 className={`${block}__title`}>Log in to your account</h2>
         <p className={`${block}__signup`}>
-          Don't have an account yet? <a href='/signup'>Sign up</a> <br />
-          <a href='/forgot'>Forgot your password?</a>
+          Don't have an account yet? <Link href='/signup'>Sign up</Link> <br />
+          <Link href='/forgot'>Forgot your password?</Link>
         </p>
 
         <label className={`${block}__form-100`}>
