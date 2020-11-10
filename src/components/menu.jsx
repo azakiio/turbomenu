@@ -3,6 +3,7 @@ import firebase from "gatsby-plugin-firebase"
 import Logo from "../assets/logo.svg"
 import NotFound from "../components/notFound"
 import Meta from "../components/meta"
+import { Link } from "gatsby"
 
 export default function Menu(props) {
   const block = "menu"
@@ -86,9 +87,9 @@ export default function Menu(props) {
           </div>
           <div className={block + "__footer"}>
             Powered by
-            <a href='/'>
+            <Link href='/'>
               <img src={Logo} alt='TurboMenu Logo' />
-            </a>
+            </Link>
           </div>
         </div>
       )}

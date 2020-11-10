@@ -1,9 +1,10 @@
 import React, { useState, useLayoutEffect } from "react"
+import Meta from "../components/meta"
 import QRCode from "qrcode.react"
 import { FaDownload, FaSignOutAlt } from "react-icons/fa"
 import Logo from "../assets/logo.svg"
 import firebase from "gatsby-plugin-firebase"
-import { navigate } from "gatsby"
+import { Link, navigate } from "gatsby"
 
 export default function BuilderHeader(props) {
   const block = "header"
@@ -40,11 +41,11 @@ export default function BuilderHeader(props) {
 
   return (
     <header className={block}>
-      <Meta title={"TurboMenu —" + {title}} description='' />
+      <Meta title={`TurboMenu — ${title}`} description='' />
       <nav className={block + "__nav"}>
-        <a href='/' className={block + "__logo"}>
+        <Link href='/' className={block + "__logo"}>
           <img src={Logo} alt='TurboMenu Logo'></img>
-        </a>
+        </Link>
         <div className={block + "__right"}>
           <button onClick={logout} className={block + "__navLink"} href='/'>
             <FaSignOutAlt /> Log out
@@ -58,9 +59,9 @@ export default function BuilderHeader(props) {
           onChange={handleChange}
           onBlur={handleBlur}
         />
-        <a className={block + "__link"} href={`/${props.id}`}>
+        <Link className={block + "__link"} href={`/${props.id}`}>
           {link}
-        </a>
+        </Link>
         <div className={block + "__qr-container"}>
           <QRCode value={link} renderAs='svg'/>
           <button className={block + "__download"}>
