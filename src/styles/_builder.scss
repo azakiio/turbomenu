@@ -4,6 +4,7 @@
 
   &__title {
     @include menuTitle;
+    margin: 0;
   }
 
   &__new {
@@ -11,27 +12,31 @@
     margin-top: 2rem;
   }
 
-  &__head{
+  &__message {
+    margin-left: 1rem;
+    font-size: 1rem;
+    opacity: 0.5;
+  }
+
+  &__head {
     margin: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid $primary;
 
-   
-
-    &-btns{
+    &-btns {
       display: flex;
       justify-content: space-between;
 
-      &-secondary{
+      &-secondary {
         @include secondaryButton;
-        margin-right: 2rem;
+        padding: 1rem;
       }
-  
-      &-primary{
+
+      &-primary {
         @include primaryButton;
       }
     }
-  }  
+  }
 }

@@ -77,12 +77,12 @@ export default function Signup() {
     <div className={block}>
       <Meta title='TurboMenu — Sign up' description='TurboMenu is a free tool that allows you to create a mobile-friendly contactless menu to deliver a safer dining experience during COVID-19.' />
       <form className={`${block}__form`} onSubmit={signUp}>
-        <Link href="/" className={`${block}__logo`}>
+        <Link to="/" className={`${block}__logo`}>
           <img src={Logo} alt='TurboMenu Logo'></img>
         </Link>
         <h2 className={`${block}__title`}>Create your account</h2>
         <p className={`${block}__login`}>
-          Already have an account? <Link href='/login'>Log in</Link>
+          Already have an account? <Link to='/login'>Log in</Link>
         </p>
 
         <label className={`${block}__form-100`}>
@@ -119,7 +119,7 @@ export default function Signup() {
           <input name='email' type='email' placeholder='email@example.com' />
           {!isValidEmail && (
             <div className={`${block}__invalid`}>
-              This email is already in use, please <Link href='/login'>Login</Link>
+              This email is already in use, please <Link to='/login'>Login</Link>
             </div>
           )}
         </label>

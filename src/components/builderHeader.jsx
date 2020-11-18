@@ -43,11 +43,11 @@ export default function BuilderHeader(props) {
     <header className={block}>
       <Meta title={`TurboMenu — ${title}`} description='' />
       <nav className={block + "__nav"}>
-        <Link href='/' className={block + "__logo"}>
+        <Link to='/' className={block + "__logo"}>
           <img src={Logo} alt='TurboMenu Logo'></img>
         </Link>
         <div className={block + "__right"}>
-          <button onClick={logout} className={block + "__navLink"} href='/'>
+          <button onClick={logout} className={block + "__navLink"}>
             <FaSignOutAlt /> Log out
           </button>
         </div>
@@ -59,7 +59,7 @@ export default function BuilderHeader(props) {
           onChange={handleChange}
           onBlur={handleBlur}
         />
-        <Link className={block + "__link"} href={`/${props.id}`}>
+        <Link className={block + "__link"} to={`/${props.id}`}>
           {link}
         </Link>
         <div className={block + "__qr-container"}>

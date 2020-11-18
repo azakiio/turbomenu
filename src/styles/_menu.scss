@@ -52,8 +52,14 @@
     cursor: pointer;
   }
 
-  &__content {
+  &__wrapper {
     background: $background;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__content {
     padding: 1rem;
   }
 
@@ -96,18 +102,5 @@
   &__itemDescription {
     @include menuItemDescription;
     width: 90%;
-  }
-
-  &__footer {
-    @include menuItemTitle;
-    background: $background;
-    text-align: center;
-    padding: 0.5rem;
-    font-weight: 600;
-
-    img {
-      margin-left: 0.5rem;
-      width: 6rem;
-    }
   }
 }
