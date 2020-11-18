@@ -25,5 +25,3 @@ export default function Meta(props) {
     </Helmet>
   )
 };
-
-//TODO: Make this take in arguments and use variables

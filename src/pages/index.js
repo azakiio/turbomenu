@@ -23,10 +23,10 @@ export default function Home() {
         </div>
 
         <div className={`${block}__header-links`}>
-          <Link className={`${block}__header-login`} href='/login'>
+          <Link className={`${block}__header-login`} to='/login'>
             Log in
           </Link>
-          <Link className={`${block}__header-signup`} href='/signup'>
+          <Link className={`${block}__header-signup`} to='/signup'>
             Sign up
           </Link>
         </div>
@@ -40,10 +40,10 @@ export default function Home() {
               Easily create and manage a contactless menu for your restaurant
             </p>
             <div className={`${block}__hero-links`}>
-              <Link className={`${block}__hero-link`} href='/signup'>
+              <Link className={`${block}__hero-link`} to='/signup'>
                 Create your free menu
               </Link>
-              <Link className={`${block}__hero-secondary`} href='/demo'>
+              <Link className={`${block}__hero-secondary`} to='/demo'>
                 See a demo
               </Link>
             </div>

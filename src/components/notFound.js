@@ -17,7 +17,7 @@ export default function NotFound() {
       />
       <h1>Oops, the page you’re looking for doesn’t exist.</h1>
 
-      <Link href='/'>Back to homepage</Link>
+      <Link to='/'>Back to homepage</Link>
     </div>
   )
 }

@@ -1,0 +1,11 @@
+.footer {
+    @include menuItemTitle;
+    text-align: center;
+    padding: 0.5rem;
+    font-weight: 600;
+
+    img {
+      margin-left: 0.5rem;
+      width: 6rem;
+    }
+  }
