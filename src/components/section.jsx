@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-// import SweetAlert from 'sweetalert-react';
+import Swal from "sweetalert2"
 import { FaChevronRight, FaChevronDown, FaPen, FaTrash } from "react-icons/fa"
 import Item from "./item"
 
@@ -12,6 +12,22 @@ function Section(props) {
   function addItem(sectionIndex, e) {
     props.addItem(sectionIndex, e)
     setItemInput(false)
+  }
+
+  function deleteSection(index) {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "Deleting a section cannot be undone",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(result => {
+      if (result.isConfirmed) {
+        props.deleteSection(index)
+      }
+    })
   }
 
   function cancelItem() {
@@ -92,7 +108,7 @@ function Section(props) {
             </button>
             <button
               className={block + "__button"}
-              onClick={() => props.deleteSection(props.index)}
+              onClick={() => deleteSection(props.index)}
             >
               <FaTrash />
             </button>

@@ -43,9 +43,13 @@ $mobile-padding: 1rem;
       justify-content: space-around;
     }
 
-    &-links{
+    &-links {
       margin-top: 1rem;
       display: flex;
+
+      @include mobile {
+        flex-wrap: wrap;
+      }
     }
 
     &-logo {
@@ -58,6 +62,7 @@ $mobile-padding: 1rem;
 
     &-login {
       display: block;
+      margin: auto;
       @include secondaryButton;
       color: $black;
 
@@ -68,6 +73,7 @@ $mobile-padding: 1rem;
 
     &-signup {
       display: block;
+      margin: auto;
       @include primaryButton;
     }
   }
@@ -155,6 +161,12 @@ $mobile-padding: 1rem;
     &-link {
       display: block;
       @include primaryButton;
+      margin: 0.5rem;
+    }
+
+    &-secondary {
+      @include secondaryButton;
+      border: 2px solid $red;
       margin: 0.5rem;
     }
   }
@@ -315,7 +327,7 @@ $mobile-padding: 1rem;
     height: 3.75rem;
     transition: transform 0.5s;
 
-    &:hover{
+    &:hover {
       transform: scale(1.2);
     }
   }

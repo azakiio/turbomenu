@@ -1,6 +1,7 @@
 import React from "react"
 import Logo from "../assets/logo.svg"
 import Man from "../assets/404.png"
+import { Link } from "gatsby"
 
 export default function NotFound() {
   const block = "error"
@@ -16,7 +17,7 @@ export default function NotFound() {
       />
       <h1>Oops, the page you’re looking for doesn’t exist.</h1>
 
-      <a href='/'>Back to homepage</a>
+      <Link to='/'>Back to homepage</Link>
     </div>
   )
 }

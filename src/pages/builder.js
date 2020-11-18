@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useState } from "react"
 import firebase from "gatsby-plugin-firebase"
+import Logo from "../assets/logo.svg"
 import BuilderContent from "../components/builderContent"
 import BuilderHeader from "../components/builderHeader"
 import { navigate } from "gatsby"
@@ -26,7 +27,9 @@ export default function Builder() {
       <BuilderContent id={TurboId} />
     </>
   ) : (
-    <div>Loading</div>
+    <div className={"menu__loading"}>
+      <img src={Logo} alt='TurboMenu Logo'></img>
+      <p className={"menu__loading-text"}>Loading your delicious menu...</p>
+    </div>
   )
 }
-//TODO: Fix loading state

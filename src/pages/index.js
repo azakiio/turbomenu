@@ -9,25 +9,26 @@ import TMvsPDF from "../assets/TMvsPDF.png"
 import Personalized from "../assets/personalized.png"
 import BMC from "../assets/BMC.svg"
 import Builder from "../assets/builder.png"
+import { Link } from "gatsby"
 
 export default function Home() {
   const block = "home"
 
   return (
     <div className={block}>
-      <Meta title='TurboMenu — Contactless menus for your restaurant' />
+      <Meta title='TurboMenu — Contactless menus for your restaurant' description='TurboMenu is a free tool that allows you to create a mobile-friendly contactless menu to deliver a safer dining experience during COVID-19.' />
       <header className={`${block}__header`}>
         <div className={`${block}__header-logo`}>
           <img src={Logo} alt='TurboMenu Logo'></img>
         </div>
 
         <div className={`${block}__header-links`}>
-          <a className={`${block}__header-login`} href='/login'>
+          <Link className={`${block}__header-login`} to='/login'>
             Log in
-          </a>
-          <a className={`${block}__header-signup`} href='/signup'>
+          </Link>
+          <Link className={`${block}__header-signup`} to='/signup'>
             Sign up
-          </a>
+          </Link>
         </div>
       </header>
 
@@ -39,12 +40,12 @@ export default function Home() {
               Easily create and manage a contactless menu for your restaurant
             </p>
             <div className={`${block}__hero-links`}>
-              <a className={`${block}__hero-link`} href='/signup'>
+              <Link className={`${block}__hero-link`} to='/signup'>
                 Create your free menu
-              </a>
-              <a className={`${block}__hero-link`} href='/demo'>
+              </Link>
+              <Link className={`${block}__hero-secondary`} to='/demo'>
                 See a demo
-              </a>
+              </Link>
             </div>
           </div>
 
