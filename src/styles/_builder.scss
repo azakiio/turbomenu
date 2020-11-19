@@ -5,6 +5,16 @@
   &__title {
     @include menuTitle;
     margin: 0;
+    padding: 0;
+  }
+
+  &__saved{
+    font-style: italic;
+    color: $grey;
+    margin: 0;
+    margin-left: 2rem;
+    font-size: 1rem;
+    margin-top: 0.25rem;
   }
 
   &__new {
@@ -24,6 +34,11 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid $primary;
+
+    &-left{
+      display: flex;
+      align-items: center;
+    }
 
     &-btns {
       display: flex;

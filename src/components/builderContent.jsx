@@ -123,7 +123,10 @@ export default function BuilderContent(props) {
     <div className={`${block}__wrapper`}>
       <main className={block}>
         <div className={`${block}__head`}>
-          <h2 className={block + "__title"}>Menu</h2>
+          <div className={`${block}__head-left`}>
+            <h2 className={block + "__title"}>Menu</h2>
+            <p className={`${block}__saved`}>All changes saved automatically.</p>
+          </div>
           <div className={`${block}__head-btns`}>
             <button
               className={block + "__head-btns-secondary"}
