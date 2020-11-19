@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from "react"
+import React, { useState, useEffect } from "react"
 import Meta from "../components/meta"
 import QRCode from "qrcode.react"
 import { FaDownload, FaSignOutAlt } from "react-icons/fa"
@@ -7,23 +7,28 @@ import firebase from "gatsby-plugin-firebase"
 import { Link, navigate } from "gatsby"
 
 export default function BuilderHeader(props) {
+  const { turboId } = props
   const block = "header"
-  const link = `https://turbo.menu/${props.id}`
+  const link = `https://turbo.menu/${turboId}`
   const [title, setTitle] = useState("Loading...")
+  const [downloadLink, setDownloadLink] = useState("")
 
-  useLayoutEffect(() => {
-    const titleRef = firebase.database().ref(`menus/${props.id}/title`)
+  useEffect(() => {
+    const titleRef = firebase.database().ref(`menus/${turboId}/title`)
     titleRef.on("value", function (snapshot) {
       setTitle(snapshot.val())
     })
-  }, [props.id])
+
+    const canvas = document.getElementById("QR-code")
+    setDownloadLink(canvas.toDataURL("image/png"))
+  }, [turboId])
 
   function handleChange(e) {
     setTitle(e.currentTarget.value)
   }
 
   function handleBlur(e) {
-    const titleRef = firebase.database().ref(`menus/${props.id}/title`)
+    const titleRef = firebase.database().ref(`menus/${turboId}/title`)
     titleRef.set(e.currentTarget.value)
   }
 
@@ -59,14 +64,18 @@ export default function BuilderHeader(props) {
           onChange={handleChange}
           onBlur={handleBlur}
         />
-        <Link className={block + "__link"} to={`/${props.id}`}>
+        <Link className={block + "__link"} to={`/${turboId}`}>
           {link}
         </Link>
         <div className={block + "__qr-container"}>
-          <QRCode value={link} renderAs='svg'/>
-          <button className={block + "__download"}>
+          <QRCode id='QR-code' value={link} />
+          <a
+            href={downloadLink}
+            download={`${turboId}-QR.png`}
+            className={block + "__download"}
+          >
             <FaDownload /> Download
-          </button>
+          </a>
         </div>
       </div>
     </header>

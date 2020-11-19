@@ -6,7 +6,7 @@ import BuilderHeader from "../components/builderHeader"
 import { navigate } from "gatsby"
 
 export default function Builder() {
-  const [TurboId, setTurboId] = useState(false)
+  const [turboId, setTurboId] = useState(false)
 
   useLayoutEffect(() => {
     firebase.auth().onAuthStateChanged(function (user) {
@@ -21,10 +21,10 @@ export default function Builder() {
     })
   }, [])
 
-  return TurboId ? (
+  return turboId ? (
     <>
-      <BuilderHeader id={TurboId} />
-      <BuilderContent id={TurboId} />
+      <BuilderHeader turboId={turboId} />
+      <BuilderContent turboId={turboId} />
     </>
   ) : (
     <div className={"menu__loading"}>

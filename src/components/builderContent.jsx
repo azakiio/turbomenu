@@ -5,13 +5,14 @@ import firebase from "gatsby-plugin-firebase"
 import Footer from "./footer"
 
 export default function BuilderContent(props) {
+  const { turboId } = props
   const block = "builder"
   const [menu, setMenu] = useState([])
   const [isSectionInput, setSectionInput] = useState(false)
   const [isAutoSave, setAutoSave] = useState(false)
 
   useEffect(() => {
-    const menuRef = firebase.database().ref(`menus/${props.id}/menu`)
+    const menuRef = firebase.database().ref(`menus/${turboId}/menu`)
     menuRef
       .once("value")
       .then(function (snapshot) {
@@ -22,19 +23,17 @@ export default function BuilderContent(props) {
       .then(() => {
         setAutoSave(true)
       })
-  }, [props.id])
+  }, [turboId])
 
   useEffect(() => {
     const save = () => {
-      const menuRef = firebase.database().ref(`menus/${props.id}/menu`)
+      const menuRef = firebase.database().ref(`menus/${turboId}/menu`)
       menuRef.set(menu)
     }
     if (isAutoSave) {
       save()
     }
-  }, [props.id, menu, isAutoSave])
-
-  
+  }, [turboId, menu, isAutoSave])
 
   function addSectionHandler() {
     setSectionInput(!isSectionInput)
