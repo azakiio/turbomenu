@@ -1,0 +1,11 @@
+{
+  "home": {
+    "loginButton": "Log in",
+    "signupButton": "Sign up",
+    "heroTitle": "Create a safer dining experience with a contactless menu",
+    "heroSubtitle": "Easily create and manage a contactless menu for your restaurant",
+    "builderDemo": "Create your free menu",
+    "menuDemo": "See a demo",
+    "mainQuestion": "Why a contactless menu?"
+  }
+}

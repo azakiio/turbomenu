@@ -1,4 +1,5 @@
 import React from "react"
+import { useIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
 import Meta from "../components/meta"
 import Logo from "../assets/logo.svg"
 import Hero from "../assets/hero.png"
@@ -9,10 +10,11 @@ import TMvsPDF from "../assets/TMvsPDF.png"
 import Personalized from "../assets/personalized.png"
 import BMC from "../assets/BMC.svg"
 import Builder from "../assets/builder.png"
-import { Link } from "gatsby"
+
 
 export default function Home() {
   const block = "home"
+  const intl = useIntl()
 
   return (
     <div className={block}>
@@ -24,10 +26,10 @@ export default function Home() {
 
         <div className={`${block}__header-links`}>
           <Link className={`${block}__header-login`} to='/login'>
-            Log in
+            {intl.formatMessage({ id: "home.loginButton" })}
           </Link>
           <Link className={`${block}__header-signup`} to='/signup'>
-            Sign up
+          {intl.formatMessage({ id: "home.signupButton" })}
           </Link>
         </div>
       </header>
@@ -35,16 +37,16 @@ export default function Home() {
       <section>
         <div className={`${block}__hero`}>
           <div className={`${block}__hero-content`}>
-            <h1>Create a safer dining experience with a contactless menu</h1>
+            <h1>{intl.formatMessage({ id: "home.heroTitle" })}</h1>
             <p>
-              Easily create and manage a contactless menu for your restaurant
+            {intl.formatMessage({ id: "home.heroSubtitle" })}
             </p>
             <div className={`${block}__hero-links`}>
               <Link className={`${block}__hero-link`} to='/signup'>
-                Create your free menu
+              {intl.formatMessage({ id: "home.builderDemo" })}
               </Link>
               <Link className={`${block}__hero-secondary`} to='/demo'>
-                See a demo
+              {intl.formatMessage({ id: "home.menuDemo" })}
               </Link>
             </div>
           </div>
@@ -53,7 +55,7 @@ export default function Home() {
         </div>
 
         <div className={`${block}__3-col`}>
-          <h1>Why a contactless menu?</h1>
+          <h1>{intl.formatMessage({ id: "home.mainQuestion" })}</h1>
 
           <div className={`${block}__3-col-section`}>
             <div className={`${block}__3-col-section-item`}>

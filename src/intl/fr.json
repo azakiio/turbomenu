@@ -1,0 +1,11 @@
+{
+  "home": {
+    "loginButton": "SPanish Login",
+    "signupButton": "Spanish Sign up",
+    "heroTitle": "SPanish",
+    "heroSubtitle": "Easily create and manage a contactless menu for your restaurant",
+    "builderDemo": "Create your free menu",
+    "menuDemo": "See a demo",
+    "mainQuestion": "Why a contactless menu?"
+  }
+}
