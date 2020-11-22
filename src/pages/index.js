@@ -110,7 +110,7 @@ export default function Home() {
             <h1>Hassle-free management</h1>
             <p>
               TurboMenu manages all the hosting and technical aspects involved
-              of having a contactless menu.
+              in having a contactless menu.
             </p>
           </div>
         </div>
