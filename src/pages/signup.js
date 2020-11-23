@@ -9,6 +9,12 @@ import { Link, navigate } from "gatsby"
 export default function Signup() {
   const block = "signup"
 
+  const invalid = name => {
+    if(formik.touched[name] && formik.errors[name]){
+      return { border: "2px solid #e00000", background: "#ffe7e7" }
+    }
+    return null;
+  }
   const validate = async values => {
     const errors = {}
     if (!values.title) {
@@ -24,7 +30,6 @@ export default function Signup() {
       const menuRef = firebase.database().ref(`menus/${values.link}`)
       const snapshot = await menuRef.once("value")
       if (snapshot.exists()) {
-        console.log("error")
         errors.link =
           "Sorry, that link is already taken. If this is your restaurant, please contact us"
       }
@@ -106,7 +111,7 @@ export default function Signup() {
           Already have an account? <Link to='/login'>Log in</Link>
         </p>
 
-        <label className={`${block}__form-100`}>
+        <label className={`${block}__form-label`}>
           Your Restaurant's Name
           <input
             name='title'
@@ -115,6 +120,7 @@ export default function Signup() {
             onBlur={formik.handleBlur}
             value={formik.values.title}
             placeholder="A&amp;F's Bar &amp; Grill"
+            style={invalid("title")}
           />
           {formik.touched.title && formik.errors.title && (
             <div className={`${block}__invalid`}>{formik.errors.title}</div>
@@ -132,6 +138,7 @@ export default function Signup() {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.link}
+              style={invalid("link")}
             />
           </div>
           {formik.touched.link && formik.errors.link && (
@@ -148,6 +155,7 @@ export default function Signup() {
             onBlur={formik.handleBlur}
             value={formik.values.email}
             placeholder='email@example.com'
+            style={invalid("email")}
           />
           {formik.touched.email && formik.errors.email && (
             <div className={`${block}__invalid`}>{formik.errors.email}</div>
@@ -163,6 +171,7 @@ export default function Signup() {
             onBlur={formik.handleBlur}
             value={formik.values.password}
             placeholder='Use at least 6 characters'
+            style={invalid("password")}
           />
           {formik.touched.password && formik.errors.password && (
             <div className={`${block}__invalid`}>{formik.errors.password}</div>

@@ -1,112 +1,98 @@
-.signup{
-    @include inputForm;
-    padding: 4rem 0;
-    background: #FAFAFA;
-    min-height: 100vh;
+.signup {
+  @include inputForm;
+  padding: 4rem 0;
+  background: #fafafa;
+  min-height: 100vh;
 
-    @include mobile{
-        padding: 0;
+  @include mobile {
+    padding: 0;
+  }
+
+  &__header {
+    @include container;
+    padding: 1rem 0;
+    width: 100%;
+  }
+
+  &__logo {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  &__form {
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+    margin: 0% 30% 0% 30%;
+    border-radius: 1rem;
+    box-shadow: 0 0.1px 0.4px rgba(0, 0, 0, 0.017),
+      0 0.3px 1px rgba(0, 0, 0, 0.024), 0 0.6px 1.9px rgba(0, 0, 0, 0.03),
+      0 1.1px 3.4px rgba(0, 0, 0, 0.036), 0 2.1px 6.3px rgba(0, 0, 0, 0.043),
+      0 5px 15px rgba(0, 0, 0, 0.06);
+
+    @include tablet {
+      margin: 0% 20% 0% 20%;
     }
 
-    &__header{
-        @include container;
-        padding: 1rem 0;
-        width: 100%;
+    @include mobile {
+      margin: 0;
+      max-width: 100vw;
+      box-shadow: none;
+      width: 100vw;
     }
+  }
 
-    &__logo{
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-    
+  &__invalid {
+    color: $red;
+    margin: -1.5rem 0 1rem 0;
+    font-size: 0.75rem;
+  }
 
-    &__form{
-        padding: 2rem 4rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background: white;
-        margin: 0% 30% 0% 30%;
-        border-radius: 1rem;
-        box-shadow:
-        0 0.1px 0.4px rgba(0, 0, 0, 0.017),
-        0 0.3px 1px rgba(0, 0, 0, 0.024),
-        0 0.6px 1.9px rgba(0, 0, 0, 0.03),
-        0 1.1px 3.4px rgba(0, 0, 0, 0.036),
-        0 2.1px 6.3px rgba(0, 0, 0, 0.043),
-        0 5px 15px rgba(0, 0, 0, 0.06)
-      ;
+  &__title {
+    @include header2;
+    text-align: center;
+    margin: 0;
+  }
 
-      & input{
-        // border: 2px solid $red;
-        // background: #FFE7E7;
+  &__login {
+    @include bodyText;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    & a {
+      color: $red;
+      font-weight: 600;
+
+      &:hover {
+        text-decoration: underline;
       }
-
-      @include tablet{
-        margin: 0% 20% 0% 20%;
-      }
-
-      @include mobile{
-          margin: 0;
-          max-width: 100vw;
-          box-shadow: none;
-          width: 100vw;
-      }
     }
+  }
 
-    &__invalid{
-        color: $red;
-        margin: -1.5rem 0 1rem 0;
-        font-size: 0.75rem;
+  &__tm-link {
+    position: relative;
+
+    & input {
+      display: block;
+      padding-left: 7rem;
     }
+  }
 
-    &__title{
-        @include header2;
-        text-align: center;
-        margin: 0;
-    }
+  &__tm-text {
+    position: absolute;
+    display: block;
+    z-index: 2;
+    padding: 0.75rem 0.5rem;
+  }
 
-    &__login{
-        @include bodyText;
-        text-align: center;
-        margin-bottom: 2rem;
+  &__form-buttons {
+    justify-content: center;
+  }
 
-        & a{
-            color: $red;
-            font-weight: 600;
-
-            &:hover{
-                text-decoration: underline;
-            }
-        }
-    }
-
-    &__tm-link{
-        position: relative;
-
-        & input{
-            display: block;
-            padding-left: 7rem;
-        }
-    }
-
-    &__tm-text{
-        position: absolute;
-        display: block;
-        z-index: 2;
-        padding: 0.75rem 0.5rem;
-    }
-
-    &__form-buttons{
-        justify-content: center;
-    }
-
-    button{
-        margin-top: 1rem;
-        width: 100%;
-    }
-
-
-
-
+  button {
+    margin-top: 1rem;
+    width: 100%;
+  }
 }
