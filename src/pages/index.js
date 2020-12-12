@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <div className={block}>
-      <Meta title='TurboMenu — Contactless menus for your restaurant' description='TurboMenu is a free tool that allows you to create a mobile-friendly contactless menu to deliver a safer dining experience during COVID-19.' />
+      <Meta title='TurboMenu — Free QR code menu for your restaurant' description='TurboMenu is a free tool that allows you to create a mobile-friendly QR code menu to deliver a safer dining experience during COVID-19.' />
       <header className={`${block}__header`}>
         <div className={`${block}__header-logo`}>
           <img src={Logo} alt='TurboMenu Logo'></img>
@@ -35,9 +35,9 @@ export default function Home() {
       <section>
         <div className={`${block}__hero`}>
           <div className={`${block}__hero-content`}>
-            <h1>Create a safer dining experience with a contactless menu</h1>
+            <h1>Create a safer dining experience with a QR code menu</h1>
             <p>
-              Easily create and manage a contactless menu for your restaurant
+              Easily create and manage a QR code menu for your restaurant
             </p>
             <div className={`${block}__hero-links`}>
               <Link className={`${block}__hero-link`} to='/signup'>
@@ -53,7 +53,7 @@ export default function Home() {
         </div>
 
         <div className={`${block}__3-col`}>
-          <h1>Why a contactless menu?</h1>
+          <h1>Why a QR code menu?</h1>
 
           <div className={`${block}__3-col-section`}>
             <div className={`${block}__3-col-section-item`}>
