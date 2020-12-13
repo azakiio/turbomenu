@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <div className={block}>
-      <Meta title='TurboMenu — Free QR code menu for your restaurant' description='TurboMenu is a free tool that allows you to create a mobile-friendly QR code menu to deliver a safer dining experience during COVID-19.' />
+      <Meta title='TurboMenu — Free QR code menu for your restaurant' description='TurboMenu is a free tool that allows you to create a mobile-friendly QR code menu for your restaurant during COVID-19.' />
       <header className={`${block}__header`}>
         <div className={`${block}__header-logo`}>
           <img src={Logo} alt='TurboMenu Logo'></img>
