@@ -24,5 +24,11 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: 'gatsby-plugin-tidio-chat',
+      options: {
+        tidioKey: 'qmbnv4foymi06w23ho9lplcraczmtklu',
+      },
+    },
   ],
 }
