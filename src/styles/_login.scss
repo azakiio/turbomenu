@@ -23,14 +23,23 @@
     flex-direction: column;
     justify-content: center;
     background: white;
-    margin: 0 auto;
+    margin: 0 30%;
     border-radius: 1rem;
-    min-width: 400px;
-    max-width: 40%;
     box-shadow: 0 0.1px 0.4px rgba(0, 0, 0, 0.017),
       0 0.3px 1px rgba(0, 0, 0, 0.024), 0 0.6px 1.9px rgba(0, 0, 0, 0.03),
       0 1.1px 3.4px rgba(0, 0, 0, 0.036), 0 2.1px 6.3px rgba(0, 0, 0, 0.043),
       0 5px 15px rgba(0, 0, 0, 0.06);
+
+    @include tablet {
+      margin: 0 20%;
+    }
+
+    @include mobile {
+      margin: 0;
+      max-width: 100vw;
+      box-shadow: none;
+      width: 100vw;
+    }
   }
 
   &__title {
