@@ -23,9 +23,10 @@
     flex-direction: column;
     justify-content: center;
     background: white;
-    margin: 0% 30% 0% 30%;
+    margin: 0 auto;
     border-radius: 1rem;
     min-width: 400px;
+    max-width: 40%;
     box-shadow: 0 0.1px 0.4px rgba(0, 0, 0, 0.017),
       0 0.3px 1px rgba(0, 0, 0, 0.024), 0 0.6px 1.9px rgba(0, 0, 0, 0.03),
       0 1.1px 3.4px rgba(0, 0, 0, 0.036), 0 2.1px 6.3px rgba(0, 0, 0, 0.043),
