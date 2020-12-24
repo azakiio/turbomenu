@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Meta from "../components/meta"
 import Logo from "../assets/logo.svg"
 import Hero from "../assets/hero.png"
@@ -14,9 +14,19 @@ import { Link } from "gatsby"
 export default function Home() {
   const block = "home"
 
+  useEffect(() => {
+    const tidio = document.getElementById("tidio-chat")
+    if (tidio) {
+      tidio.style.display = null
+    }
+  }, [])
+
   return (
     <div className={block}>
-      <Meta title='TurboMenu — Free QR code menu for your restaurant' description='TurboMenu is a free tool that allows you to create a mobile-friendly QR code menu for your restaurant during COVID-19.' />
+      <Meta
+        title='TurboMenu — Free QR code menu for your restaurant'
+        description='TurboMenu is a free tool that allows you to create a mobile-friendly QR code menu for your restaurant during COVID-19.'
+      />
       <header className={`${block}__header`}>
         <div className={`${block}__header-logo`}>
           <img src={Logo} alt='TurboMenu Logo'></img>
@@ -36,9 +46,7 @@ export default function Home() {
         <div className={`${block}__hero`}>
           <div className={`${block}__hero-content`}>
             <h1>Create a safer dining experience with a QR code menu</h1>
-            <p>
-              Easily create and manage a QR code menu for your restaurant
-            </p>
+            <p>Easily create and manage a QR code menu for your restaurant</p>
             <div className={`${block}__hero-links`}>
               <Link className={`${block}__hero-link`} to='/signup'>
                 Create your free menu

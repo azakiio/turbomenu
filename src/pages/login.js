@@ -9,6 +9,13 @@ function Login() {
   const block = "login"
 
   useEffect(() => {
+    const tidio = document.getElementById("tidio-chat")
+    if (tidio) {
+      tidio.style.display = "none"
+    }
+  }, [])
+
+  useEffect(() => {
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
         navigate("/builder")
