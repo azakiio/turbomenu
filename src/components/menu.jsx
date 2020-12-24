@@ -33,7 +33,7 @@ export default function Menu(props) {
     <>
       <Meta
         title={title + " - TurboMenu"}
-        description={title + "'s contactless menu. Created using TurboMenu."}
+        description={title + "'s menu. Created using TurboMenu."}
       />
       {state === "loading" && (
         <div className={block + "__loading"}>

@@ -9,11 +9,18 @@ import { Link, navigate } from "gatsby"
 export default function Signup() {
   const block = "signup"
 
+  useEffect(() => {
+    const tidio = document.getElementById("tidio-chat")
+    if (tidio) {
+      tidio.style.display = "none"
+    }
+  }, [])
+
   const invalid = name => {
-    if(formik.touched[name] && formik.errors[name]){
+    if (formik.touched[name] && formik.errors[name]) {
       return { border: "2px solid #e00000", background: "#ffe7e7" }
     }
-    return null;
+    return null
   }
   const validate = async values => {
     const errors = {}
