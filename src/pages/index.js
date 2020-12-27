@@ -145,6 +145,9 @@ export default function Home() {
             in Toronto
           </p>
           <p>
+          <a href="/privacy">Privacy Policy</a>
+          </p>
+          <p>
             Questions? Reach out:{" "}
             <a href='mailto:hello@turbo.menu'>hello@turbo.menu</a>
           </p>
