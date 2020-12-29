@@ -1,31 +1,30 @@
-.privacy{
+.privacy {
+  @include container;
+  margin: 3rem auto;
 
-    @include container;
-    padding: 3rem 0;
+  h1 {
+    @include header1;
+  }
 
-    h1{
-        @include header1;
-    }
+  h2 {
+    @include header2;
+    margin-top: 4rem;
+    border-bottom: 2px solid $primary;
+  }
 
-    h2{
-        @include header2;
-        margin-top: 4rem;
-        border-bottom: 2px solid $primary;
-    }
+  h3 {
+    @include header3;
+  }
 
-    h3{
-        @include header3;
-    }
+  p {
+    @include bodyText;
+  }
 
-    p{
-        @include bodyText;
-    }
+  a {
+    @include restaurantLink;
+  }
 
-    a{
-        @include restaurantLink;
-    }
-
-    li{
-        font-weight: 600;
-    }
+  li {
+    font-weight: 600;
+  }
 }

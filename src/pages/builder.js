@@ -4,16 +4,11 @@ import Logo from "../assets/logo.svg"
 import BuilderContent from "../components/builderContent"
 import BuilderHeader from "../components/builderHeader"
 import { navigate } from "gatsby"
+import useTidio from "../hooks/useTidio"
 
 export default function Builder() {
   const [turboId, setTurboId] = useState(false)
-
-  useEffect(() => {
-    const tidio = document.getElementById("tidio-chat")
-    if(tidio){
-      tidio.style.display = null
-    }
-  }, [])
+  useTidio()
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged(function (user) {

@@ -1,20 +1,14 @@
 import React, { useEffect } from "react"
 import { useFormik } from "formik"
-
 import Meta from "../components/meta"
 import firebase from "gatsby-plugin-firebase"
 import Logo from "../assets/logo.svg"
 import { Link, navigate } from "gatsby"
+import useTidio from "../hooks/useTidio"
 
 export default function Signup() {
   const block = "signup"
-
-  useEffect(() => {
-    const tidio = document.getElementById("tidio-chat")
-    if (tidio) {
-      tidio.style.display = "none"
-    }
-  }, [])
+  useTidio(false)
 
   const invalid = name => {
     if (formik.touched[name] && formik.errors[name]) {
