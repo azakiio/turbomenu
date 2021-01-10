@@ -143,6 +143,9 @@ export default function Home() {
             in Toronto
           </p>
           <p>
+          <a href="/about-us">About us</a>  //  <a href="/privacy">Privacy Policy</a>
+          </p>
+          <p>
             Questions? Reach out:{" "}
             <a href='mailto:hello@turbo.menu'>hello@turbo.menu</a>
           </p>

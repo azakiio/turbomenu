@@ -1,6 +1,6 @@
 import React from "react"
 import Meta from "../components/meta"
-import Footer from "../components/footer"
+import GlobalFooter from "../components/globalFooter"
 import { Link } from "gatsby"
 import useTidio from "../hooks/useTidio"
 
@@ -9,13 +9,25 @@ export default function Privacy() {
   useTidio(false)
 
   return (
-    <>
-      <div className={block}>
-        <Meta
-          title='TurboMenu — Privacy Policy'
-          description='TurboMenu is a free tool that allows you to create a mobile-friendly QR code menu for your restaurant during COVID-19.'
-        />
-        <a href='/'>Back to Homepage</a>
+    <div>
+
+    <div className={block}>
+        <Meta title='TurboMenu — Privacy Policy' description='TurboMenu is a free tool that allows you to create a mobile-friendly QR code menu for your restaurant during COVID-19.' />
+        <a href="/">Back to Homepage</a>
+
+      <h1>Privacy Policy</h1>
+      <p>Last updated: December 26, 2020</p>
+      <h2>Introduction</h2>
+      <p>
+        At TurboMenu, we’re helping restaurants create free contactless menus to
+        reduce the spread of COVID-19. In order to do so, TurboMenu collects the
+        necessary information to serve our users and their customers
+        effectively. This policy describes the information we process to support
+        TurboMenu. This Privacy Policy will help you better understand how we
+        collect use, and share your personal information. If any of our
+        practices change, you will be directly informed by email.
+      </p>
+
 
         <h1>Privacy Policy</h1>
         <p>Last updated: December 28, 2020</p>
@@ -127,22 +139,17 @@ export default function Privacy() {
           page.
         </p>
 
-        <h2>Contact us</h2>
-        <p>
-          If you have any questions about this Privacy Policy, please contact
-          us:
-          <ul>
-            <li>
-              By email: <a href='mailto:hello@turbo.menu'>hello@turbo.menu</a>
-            </li>
-            <li>
-              By using the live-chat feature on our{" "}
-              <Link to='/'>Home page</Link>
-            </li>
-          </ul>
-        </p>
+      <h2>Contact us</h2>
+      <p>
+        If you have any questions about this Privacy Policy, please contact us:
+        <ul>
+            <li>By email: hello@turbo.menu.</li>
+            <li>By visiting our website and contacting us through live chat: http://turbo.menu.</li>
+        </ul>
+      </p>
       </div>
-      <Footer />
-    </>
+
+    <GlobalFooter/>
+    </div>
   )
 }
