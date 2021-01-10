@@ -1,16 +1,12 @@
-import React, { useEffect } from "react"
+import React from "react"
 import Menu from "../components/menu"
 import { useLocation } from "@reach/router"
+import useTidio from "../hooks/useTidio"
+
 
 export default function MenuPage() {
   const pathname = useLocation().pathname.substring(1)
-
-  useEffect(() => {
-    const tidio = document.getElementById("tidio-chat")
-    if (tidio) {
-      tidio.style.display = "none"
-    }
-  }, [])
+  useTidio(false);
 
   return <Menu id={pathname} />
 }

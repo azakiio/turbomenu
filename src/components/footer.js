@@ -6,12 +6,12 @@ const Footer = React.forwardRef((props, ref) => {
   const block = "footer"
 
   return (
-    <div ref={ref} className={block}>
+    <footer ref={ref} className={block}>
       Powered by
       <Link to='/'>
         <img src={Logo} alt='TurboMenu Logo' />
       </Link>
-    </div>
+    </footer>
   )
 })
 

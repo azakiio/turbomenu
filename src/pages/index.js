@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import Meta from "../components/meta"
 import Logo from "../assets/logo.svg"
 import Hero from "../assets/hero.png"
@@ -10,16 +10,11 @@ import Personalized from "../assets/personalized.png"
 import BMC from "../assets/BMC.svg"
 import Builder from "../assets/builder.png"
 import { Link } from "gatsby"
+import useTidio from "../hooks/useTidio"
 
 export default function Home() {
   const block = "home"
-
-  useEffect(() => {
-    const tidio = document.getElementById("tidio-chat")
-    if (tidio) {
-      tidio.style.display = null
-    }
-  }, [])
+  useTidio()
 
   return (
     <div className={block}>
@@ -137,6 +132,9 @@ export default function Home() {
         </div>
 
         <footer className={`${block}__contact`}>
+          <p>
+            <a href='/privacy'>Privacy Policy</a>
+          </p>
           <p>
             Made with{" "}
             <span role='img' aria-label='heart'>

@@ -4,16 +4,11 @@ import Swal from "sweetalert2"
 import Logo from "../assets/logo.svg"
 import firebase from "gatsby-plugin-firebase"
 import { Link, navigate } from "gatsby"
+import useTidio from "../hooks/useTidio"
 
 function Login() {
   const block = "login"
-
-  useEffect(() => {
-    const tidio = document.getElementById("tidio-chat")
-    if (tidio) {
-      tidio.style.display = "none"
-    }
-  }, [])
+  useTidio(false)
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged(function (user) {
