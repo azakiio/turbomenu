@@ -10,7 +10,6 @@ import Personalized from "../assets/personalized.png"
 import BMC from "../assets/BMC.svg"
 import Builder from "../assets/builder.png"
 import { Link } from "gatsby"
-import GlobalFooter from "../components/globalFooter"
 
 export default function Home() {
   const block = "home"
@@ -137,7 +136,34 @@ export default function Home() {
           </div>
         </div>
 
-        <GlobalFooter/>
+        <footer className={`${block}__contact`}>
+          <p>
+            Made with{" "}
+            <span role='img' aria-label='heart'>
+              ❤️
+            </span>{" "}
+            in Toronto
+          </p>
+          <p>
+          <a href="/about-us">About us</a>  //  <a href="/privacy">Privacy Policy</a>
+          </p>
+          <p>
+            Questions? Reach out:{" "}
+            <a href='mailto:hello@turbo.menu'>hello@turbo.menu</a>
+          </p>
+          <p>
+            TurboMenu is 100% free and{" "}
+            <a href='https://github.com/azakiio/turbomenu'>open-source</a>,
+            consider supporting us.
+          </p>
+          <a
+            href='https://www.buymeacoffee.com/turbomenu'
+            target='_blank'
+            rel='noreferrer'
+          >
+            <img className={`${block}__bmc`} src={BMC} alt='Buy Me A Coffee' />
+          </a>
+        </footer>
       </section>
     </div>
   )
