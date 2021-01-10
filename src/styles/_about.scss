@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: white;
 
     h1{
         @include header1;
@@ -26,6 +27,8 @@
 
     p{
         @include bodyText;
+        font-size: 1.25rem;
+        line-height: 2rem;
     }
 
     &__section{

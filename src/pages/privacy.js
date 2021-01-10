@@ -1,11 +1,14 @@
 import React, { useLayoutEffect, useState } from "react"
 import Meta from "../components/meta"
+import GlobalFooter from "../components/globalFooter"
 
 
 export default function Privacy() {
   const block = "privacy"
 
   return (
+    <div>
+
     <div className={block}>
         <Meta title='TurboMenu — Privacy Policy' description='TurboMenu is a free tool that allows you to create a mobile-friendly QR code menu for your restaurant during COVID-19.' />
         <a href="/">Back to Homepage</a>
@@ -131,6 +134,9 @@ export default function Privacy() {
             <li>By visiting our website and contacting us through live chat: http://turbo.menu.</li>
         </ul>
       </p>
+      </div>
+
+    <GlobalFooter/>
     </div>
   )
 }

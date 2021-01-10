@@ -1,0 +1,49 @@
+.globalFooter {
+  padding: 2rem $desktop-padding;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include tablet {
+    padding: 2rem $tablet-padding;
+  }
+
+  @include mobile {
+    padding: 2rem $mobile-padding;
+  }
+
+  & p {
+    @include bodyText;
+    margin: 0;
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    text-align: center;
+    color: $black;
+  }
+
+  & a {
+    color: $red;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  & button {
+    @include primaryButton;
+    margin: 1rem 0;
+  }
+
+  &__bmc {
+    height: 3.75rem;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
