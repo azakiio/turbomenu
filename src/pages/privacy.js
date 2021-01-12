@@ -1,7 +1,6 @@
 import React from "react"
 import Meta from "../components/meta"
 import GlobalFooter from "../components/globalFooter"
-import { Link } from "gatsby"
 import useTidio from "../hooks/useTidio"
 
 export default function Privacy() {

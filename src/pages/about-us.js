@@ -1,6 +1,5 @@
-import React, { useLayoutEffect, useState } from "react"
+import React from "react"
 import Meta from "../components/meta"
-import { Link } from "gatsby"
 import Fawzi from "../assets/fawzi.png"
 import Adham from "../assets/adham.jpg"
 import { FaLinkedin, FaEnvelope, FaRegIdCard, FaGithub } from "react-icons/fa"
