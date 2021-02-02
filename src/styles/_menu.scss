@@ -93,6 +93,7 @@
 
   &__itemName {
     @include menuItemTitle;
+    max-width: 75%;
   }
 
   &__itemPrice {
