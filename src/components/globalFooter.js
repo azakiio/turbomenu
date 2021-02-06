@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import BMC from "../assets/BMC.svg"
 
 const globalFooter = React.forwardRef((props, ref) => {

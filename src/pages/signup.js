@@ -1,9 +1,9 @@
 import React, { useEffect } from "react"
+import { Link, navigate } from "gatsby"
 import { useFormik } from "formik"
 import Meta from "../components/meta"
 import firebase from "gatsby-plugin-firebase"
 import Logo from "../assets/logo.svg"
-import { Link, navigate } from "gatsby"
 import useTidio from "../hooks/useTidio"
 
 export default function Signup() {

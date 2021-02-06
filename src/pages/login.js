@@ -1,9 +1,9 @@
 import React, { useEffect } from "react"
+import { Link, navigate } from "gatsby"
 import Meta from "../components/meta"
 import Swal from "sweetalert2"
 import Logo from "../assets/logo.svg"
 import firebase from "gatsby-plugin-firebase"
-import { Link, navigate } from "gatsby"
 import useTidio from "../hooks/useTidio"
 
 function Login() {
