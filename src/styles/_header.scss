@@ -1,5 +1,22 @@
 .header {
     @include container;
+
+    h1{
+        @include header1;
+    }
+
+    h2{
+        @include header2;
+    }
+
+    h3{
+        @include header3;
+    }
+
+    p{
+        @include bodyText;
+    }
+
     
     &__nav {
         height: 5rem;
@@ -49,7 +66,24 @@
 
     &__download {
         @include actionButton;
+        margin-left: 1rem;
     }
 
+    &__account{
+        //background: #FAFAFA;
+        width: 30%;
+        padding: 1rem;
+        border-radius: 1rem;
+        & button{
+            @include textLink;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    &__information{
+        display: flex;
+        justify-content: space-between;
+    }
 
 }

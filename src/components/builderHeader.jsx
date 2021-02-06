@@ -57,6 +57,8 @@ export default function BuilderHeader(props) {
           </button>
         </div>
       </nav>
+      <div className={block + "__information"}>
+
       <div className={block + "__restaurant"}>
         <input
           className={block + "__title"}
@@ -74,10 +76,20 @@ export default function BuilderHeader(props) {
             download={`${turboId}-QR.png`}
             className={block + "__download"}
           >
-            <FaDownload /> Download
+            <FaDownload /> Download QR code
           </a>
         </div>
       </div>
+
+      <div className={block + "__account"}>
+        <h2>Account settings</h2>
+        <p>accountemail@gmail.com</p>
+        <button>Change email address</button>
+        <button>Change password</button>
+      </div>
+
+      </div>
+      
     </header>
   )
 }
