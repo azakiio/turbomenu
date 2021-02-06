@@ -12,7 +12,7 @@ export default function Privacy() {
 
     <div className={block}>
         <Meta title='TurboMenu — Privacy Policy' description='TurboMenu is a free tool that allows you to create a mobile-friendly QR code menu for your restaurant during COVID-19.' />
-        <a href="/">Back to Homepage</a>
+        <Link to="/">Back to Homepage</Link>
 
       <h1>Privacy Policy</h1>
       <p>Last updated: December 26, 2020</p>
