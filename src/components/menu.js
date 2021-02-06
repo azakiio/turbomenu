@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react"
 import firebase from "gatsby-plugin-firebase"
 import Logo from "../assets/logo.svg"
-import NotFound from "../components/notFound"
-import Meta from "../components/meta"
-import Footer from "../components/footer"
+import NotFound from "./notFound"
+import Meta from "./meta"
+import Footer from "./footer"
 
 export default function Menu(props) {
   const block = "menu"

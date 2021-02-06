@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import Meta from "../components/meta"
+import Meta from "./meta"
 import QRCode from "qrcode.react"
 import { FaDownload, FaSignOutAlt } from "react-icons/fa"
 import Logo from "../assets/logo.svg"
@@ -58,38 +58,35 @@ export default function BuilderHeader(props) {
         </div>
       </nav>
       <div className={block + "__information"}>
+        <div className={block + "__restaurant"}>
+          <input
+            className={block + "__title"}
+            value={title}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+          <Link className={block + "__link"} to={`/${turboId}`}>
+            {link}
+          </Link>
+          <div className={block + "__qr-container"}>
+            <QRCode id='QR-code' value={link} />
+            <a
+              href={downloadLink}
+              download={`${turboId}-QR.png`}
+              className={block + "__download"}
+            >
+              <FaDownload /> Download QR code
+            </a>
+          </div>
+        </div>
 
-      <div className={block + "__restaurant"}>
-        <input
-          className={block + "__title"}
-          value={title}
-          onChange={handleChange}
-          onBlur={handleBlur}
-        />
-        <Link className={block + "__link"} to={`/${turboId}`}>
-          {link}
-        </Link>
-        <div className={block + "__qr-container"}>
-          <QRCode id='QR-code' value={link} />
-          <a
-            href={downloadLink}
-            download={`${turboId}-QR.png`}
-            className={block + "__download"}
-          >
-            <FaDownload /> Download QR code
-          </a>
+        <div className={block + "__account"}>
+          <h2>Account settings</h2>
+          <p>accountemail@gmail.com</p>
+          <button>Change email address</button>
+          <button>Change password</button>
         </div>
       </div>
-
-      <div className={block + "__account"}>
-        <h2>Account settings</h2>
-        <p>accountemail@gmail.com</p>
-        <button>Change email address</button>
-        <button>Change password</button>
-      </div>
-
-      </div>
-      
     </header>
   )
 }

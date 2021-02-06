@@ -6,8 +6,8 @@ import { FaLinkedin, FaEnvelope, FaRegIdCard, FaGithub } from "react-icons/fa"
 import GlobalHeader from "../components/globalHeader"
 import GlobalFooter from "../components/globalFooter"
 
-export default function Privacy() {
-  const block = "about-us"
+export default function About() {
+  const block = "about"
 
   return (
     <div>
@@ -30,7 +30,7 @@ export default function Privacy() {
 
           <div className={`${block}__us`}>
             <div className={`${block}__person`}>
-              <img className={`${block}__image`} src={Fawzi} alt='' />
+              <img className={`${block}__image`} src={Fawzi} alt='Fawzi' />
               <h3>Fawzi Ammache</h3>
               <div className={`${block}__icons`}>
                 <a
@@ -49,7 +49,7 @@ export default function Privacy() {
             </div>
 
             <div className={`${block}__person`}>
-              <img className={`${block}__image`} src={Adham} alt='' />
+              <img className={`${block}__image`} src={Adham} alt='Adham' />
               <h3>Adham Zaki</h3>
               <div className={`${block}__icons`}>
                 <a alt='Linkedin' href='https://www.linkedin.com/in/adhamzaki'>
