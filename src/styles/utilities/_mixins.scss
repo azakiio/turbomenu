@@ -147,6 +147,18 @@ $background: #fafafa;
   color: $primary;
 }
 
+@mixin textLink {
+  @include btn;
+  background: none;
+  color: $primary;
+  padding: 0;
+  text-align: left;
+
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
 @mixin inputLabel {
   font-family: $secondary-font;
   font-weight: 600;

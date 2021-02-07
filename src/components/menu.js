@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react"
 import firebase from "gatsby-plugin-firebase"
 import Logo from "../assets/logo.svg"
-import NotFound from "../components/notFound"
-import Meta from "../components/meta"
-import Footer from "../components/footer"
+import NotFound from "./notFound"
+import Meta from "./meta"
+import Footer from "./footer"
 
 export default function Menu(props) {
   const block = "menu"
@@ -13,7 +13,7 @@ export default function Menu(props) {
   const [state, setState] = useState("loading")
 
   useEffect(() => {
-    const menuRef = firebase.database().ref(`menus/${props.id}`)
+    const menuRef = firebase.database().ref(`menus/${props.id.toLowerCase()}`)
     menuRef.once("value").then(function (snapshot) {
       if (!snapshot.exists()) {
         setState("notFound")
@@ -32,8 +32,8 @@ export default function Menu(props) {
   return (
     <>
       <Meta
-        title={title + " - TurboMenu"}
-        description={title + "'s menu. Created using TurboMenu."}
+        title={`${title} - TurboMenu`}
+        description={`${title} Menu. Created using TurboMenu.`}
       />
       {state === "loading" && (
         <div className={block + "__loading"}>

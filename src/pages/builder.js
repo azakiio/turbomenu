@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react"
+import { navigate } from "gatsby"
 import firebase from "gatsby-plugin-firebase"
 import Logo from "../assets/logo.svg"
 import BuilderContent from "../components/builderContent"
 import BuilderHeader from "../components/builderHeader"
-import { navigate } from "gatsby"
 import useTidio from "../hooks/useTidio"
 
 export default function Builder() {
@@ -26,7 +26,7 @@ export default function Builder() {
   return turboId ? (
     <>
       <BuilderHeader turboId={turboId} />
-      <BuilderContent turboId={turboId} />
+      <BuilderContent turboId={turboId.toLowerCase()} />
     </>
   ) : (
     <div className={"menu__loading"}>

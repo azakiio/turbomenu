@@ -1,0 +1,9 @@
+.turbo-swal {
+  &__confirm {
+    @include primaryButton;
+  }
+
+  &__cancel {
+    @include secondaryButton;
+  }
+}

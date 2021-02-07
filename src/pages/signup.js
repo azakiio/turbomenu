@@ -1,9 +1,9 @@
 import React, { useEffect } from "react"
+import { Link, navigate } from "gatsby"
 import { useFormik } from "formik"
 import Meta from "../components/meta"
 import firebase from "gatsby-plugin-firebase"
 import Logo from "../assets/logo.svg"
-import { Link, navigate } from "gatsby"
 import useTidio from "../hooks/useTidio"
 
 export default function Signup() {
@@ -28,7 +28,7 @@ export default function Signup() {
       errors.link =
         "Links can only contain alphanumerics, underscores, hyphens, and apostrophes"
     } else {
-      const menuRef = firebase.database().ref(`menus/${values.link}`)
+      const menuRef = firebase.database().ref(`menus/${values.link.toLowerCase()}`)
       const snapshot = await menuRef.once("value")
       if (snapshot.exists()) {
         errors.link =
@@ -80,7 +80,7 @@ export default function Signup() {
         .createUserWithEmailAndPassword(email, password)
         .then(userCredential => {
           const { uid } = userCredential.user
-          const menuRef = firebase.database().ref(`menus/${link}`)
+          const menuRef = firebase.database().ref(`menus/${link.toLowerCase()}`)
           menuRef.update({
             title: title,
             owner: uid,
