@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react"
+import { Link, navigate } from "gatsby"
+import firebase from "gatsby-plugin-firebase"
+import Swal from "sweetalert2"
 import Meta from "./meta"
 import QRCode from "qrcode.react"
 import { FaDownload, FaSignOutAlt } from "react-icons/fa"
+import turboSwal from "../components/turboSwal"
 import Logo from "../assets/logo.svg"
-import firebase from "gatsby-plugin-firebase"
-import { Link, navigate } from "gatsby"
 
 export default function BuilderHeader(props) {
   const { turboId } = props
@@ -12,15 +14,20 @@ export default function BuilderHeader(props) {
   const link = `https://turbo.menu/${turboId}`
   const [title, setTitle] = useState("Loading...")
   const [downloadLink, setDownloadLink] = useState("")
+  const [userEmail, setUserEmail] = useState("")
 
   useEffect(() => {
-    const titleRef = firebase.database().ref(`menus/${turboId}/title`)
+    const titleRef = firebase
+      .database()
+      .ref(`menus/${turboId.toLowerCase()}/title`)
     titleRef.on("value", function (snapshot) {
       setTitle(snapshot.val())
     })
 
     const canvas = document.getElementById("QR-code")
     setDownloadLink(canvas.toDataURL("image/png"))
+
+    setUserEmail(firebase.auth().currentUser.email)
   }, [turboId])
 
   function handleChange(e) {
@@ -28,7 +35,9 @@ export default function BuilderHeader(props) {
   }
 
   function handleBlur(e) {
-    const titleRef = firebase.database().ref(`menus/${turboId}/title`)
+    const titleRef = firebase
+      .database()
+      .ref(`menus/${turboId.toLowerCase()}/title`)
     titleRef.set(e.currentTarget.value)
   }
 
@@ -41,6 +50,60 @@ export default function BuilderHeader(props) {
       })
       .catch(function (error) {
         console.log(error.message)
+      })
+  }
+
+  async function changeEmail() {
+    const { value: email } = await turboSwal.fire({
+      title: "Change your email address",
+      input: "email",
+      inputPlaceholder: "Enter your new email address",
+    })
+
+    if (email) {
+      firebase
+        .auth()
+        .currentUser.updateEmail(email)
+        .then(function () {
+          Swal.fire({
+            title: `Email has been updated to: ${email}`,
+            icon: "success",
+          })
+        })
+        .catch(function (error) {
+          Swal.fire({
+            title:
+              "Opps! Something went wrong. If this keeps happening, please contact us",
+            icon: "error",
+          })
+        })
+    }
+  }
+
+  function changePassword() {
+    turboSwal
+      .fire({
+        title: `A Password reset email will be sent to: ${userEmail}`,
+      })
+      .then(result => {
+        if (result.isConfirmed) {
+          firebase
+            .auth()
+            .sendPasswordResetEmail(userEmail)
+            .then(function () {
+              Swal.fire({
+                title: `Password Reset email sent to: ${userEmail}`,
+                icon: "success",
+              })
+            })
+            .catch(function (error) {
+              Swal.fire({
+                icon: "error",
+                title:
+                  "Opps! Something went wrong. If this keeps happening, please contact us",
+              })
+            })
+        }
       })
   }
 
@@ -82,9 +145,9 @@ export default function BuilderHeader(props) {
 
         <div className={block + "__account"}>
           <h2>Account settings</h2>
-          <p>accountemail@gmail.com</p>
-          <button>Change email address</button>
-          <button>Change password</button>
+          <p>{userEmail}</p>
+          <button onClick={changeEmail}>Change email address</button>
+          <button onClick={changePassword}>Change password</button>
         </div>
       </div>
     </header>

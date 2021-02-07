@@ -26,7 +26,7 @@ export default function Builder() {
   return turboId ? (
     <>
       <BuilderHeader turboId={turboId} />
-      <BuilderContent turboId={turboId} />
+      <BuilderContent turboId={turboId.toLowerCase()} />
     </>
   ) : (
     <div className={"menu__loading"}>

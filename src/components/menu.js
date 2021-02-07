@@ -13,7 +13,7 @@ export default function Menu(props) {
   const [state, setState] = useState("loading")
 
   useEffect(() => {
-    const menuRef = firebase.database().ref(`menus/${props.id}`)
+    const menuRef = firebase.database().ref(`menus/${props.id.toLowerCase()}`)
     menuRef.once("value").then(function (snapshot) {
       if (!snapshot.exists()) {
         setState("notFound")
@@ -32,8 +32,8 @@ export default function Menu(props) {
   return (
     <>
       <Meta
-        title={title + " - TurboMenu"}
-        description={title + "'s menu. Created using TurboMenu."}
+        title={`${title} - TurboMenu`}
+        description={`${title} Menu. Created using TurboMenu.`}
       />
       {state === "loading" && (
         <div className={block + "__loading"}>

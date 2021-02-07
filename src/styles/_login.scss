@@ -17,6 +17,12 @@
     text-align: center;
   }
 
+  &__invalid {
+    color: $red;
+    margin: -1.5rem 0 1rem 0;
+    font-size: 0.75rem;
+  }
+
   &__form {
     padding: 2rem 4rem;
     display: flex;
