@@ -11,7 +11,7 @@ const globalHeader = React.forwardRef((props, ref) => {
       <div className={`${block}-left`}>
         <Link to="/"><img src={Logo} alt='TurboMenu Logo'></img></Link>
         {/* <div>
-          <Link className={`${block}-secondaryLink`} to='/about-us'>
+          <Link className={`${block}-secondaryLink`} to='/about'>
             About Us
           </Link>
         </div> */}

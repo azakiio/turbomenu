@@ -15,7 +15,7 @@ const globalFooter = React.forwardRef((props, ref) => {
         in Toronto
       </p>
       <p>
-        <Link to='/about-us'>About us</Link>
+        <Link to='/about'>About us</Link>
         {" // "}
         <Link to='/privacy'>Privacy Policy</Link>
       </p>
