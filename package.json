@@ -24,7 +24,6 @@
     "gatsby-plugin-tidio-chat": "^1.0.0",
     "immutability-helper": "^3.1.1",
     "install": "^0.13.0",
-    "node-sass": "^4.14.1",
     "npm": "^7.3.0",
     "qrcode.react": "^1.0.0",
     "react": "^16.12.0",
@@ -35,7 +34,8 @@
     "sweetalert2": "^10.10.1"
   },
   "devDependencies": {
+    "eslint": "^7.11.0",
     "prettier": "2.1.1",
-    "eslint": "^7.11.0"
+    "sass": "^1.49.8"
   }
 }
